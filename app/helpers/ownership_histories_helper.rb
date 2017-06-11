@@ -1,0 +1,2 @@
+module OwnershipHistoriesHelper
+end

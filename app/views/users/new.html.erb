@@ -1,0 +1,87 @@
+<h2>Sign Up!</h2>
+
+<%= form_tag '/users', method: :post do %>
+	<div>
+		<%= label_tag :first_name %>
+		<%= text_field_tag :first_name %>
+	</div>
+	<div>
+		<%= label_tag :last_name %>
+		<%= text_field_tag :last_name %>
+	</div>
+	<div>
+		<%= label_tag :email %>
+		<%= text_field_tag :email %>
+	</div>
+	<div>
+		<%= label_tag "Street" %>
+		<%= text_field_tag :address_1 %>
+	</div>
+	<div>
+		<%= label_tag "Unit" %>
+		<%= text_field_tag :address_2 %>
+	</div>
+	<div>
+		<%= label_tag :city %>
+		<%= text_field_tag :city %>
+	</div>
+	<div>
+		<%= label_tag :state %>
+		<%= text_field_tag :state %>
+	</div>
+	<div>
+		<%= label_tag :zip %>
+		<%= text_field_tag :zip %>
+	</div>
+	<div>
+		<%= label_tag :phone %>
+		<%= text_field_tag :phone %>
+	</div>
+	<div>
+		<%= label_tag "Spouse's Name" %>
+		<%= text_field_tag :spouse_name %>
+	</div>
+	<div>
+		<%= label_tag "Spouse's Occupation" %>
+		<%= text_field_tag :spouse_occupation %>
+	</div>
+	<div>
+		<%= label_tag "Have kids?" %>
+		<%= check_box_tag :kids %>
+	</div>
+	<div>
+		<%= label_tag "Type of Dwelling" %>
+		<%= text_field_tag :dwelling_type %>
+	</div>
+	<div>
+		<%= label_tag "Check box if you own your home" %>
+		<%= check_box_tag :dwelling_owned %>
+	</div>
+	<div>
+		<%= label_tag "Check box if you have permission from your landlord to have a dog" %>
+		<%= check_box_tag :landlord_permission %>
+	</div>
+	<div>
+		<%= label_tag :landlord_name %>
+		<%= text_field_tag :landlord_name %>
+	</div>
+	<div>
+		<%= label_tag :landlord_phone %>
+		<%= text_field_tag :landlord_phone %>
+	</div>
+
+	<div>
+		<%= label_tag :password %>
+		<%= password_field_tag :password %>
+	</div>
+	<div>
+		<%= label_tag :password_confirmation %>
+		<%= password_field_tag :password_confirmation %>
+	</div>
+
+
+  <%= submit_tag "Submit" %>
+
+
+
+<% end %>

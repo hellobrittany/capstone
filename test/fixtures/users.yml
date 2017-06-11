@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  address_1: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  phone: MyString
+  spouse_name: MyString
+  spouse_occupation: MyString
+  kids: false
+  dwelling_type: MyString
+  dwelling_owned: false
+  landlord_permission: false
+  landlord_name: MyString
+  landlord_phone: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  address_1: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  phone: MyString
+  spouse_name: MyString
+  spouse_occupation: MyString
+  kids: false
+  dwelling_type: MyString
+  dwelling_owned: false
+  landlord_permission: false
+  landlord_name: MyString
+  landlord_phone: MyString

@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  application_id: 1
+  allergies: false
+  reason_companion: false
+  reason_kids: false
+  reason_gift: false
+  reason_other_pet: false
+  reason_watchdog: false
+  home_during_day: false
+  when_outside: MyString
+  when_inside: MyString
+  hours_dog_left_alone: 1
+  where_dog_sleep: MyString
+  outside_areas: 1
+  preferred_level_of_exercise: 1
+  type_of_dog_food: MyString
+
+two:
+  application_id: 1
+  allergies: false
+  reason_companion: false
+  reason_kids: false
+  reason_gift: false
+  reason_other_pet: false
+  reason_watchdog: false
+  home_during_day: false
+  when_outside: MyString
+  when_inside: MyString
+  hours_dog_left_alone: 1
+  where_dog_sleep: MyString
+  outside_areas: 1
+  preferred_level_of_exercise: 1
+  type_of_dog_food: MyString

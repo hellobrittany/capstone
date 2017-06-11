@@ -1,0 +1,2 @@
+class LifestyleInfosController < ApplicationController
+end

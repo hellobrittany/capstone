@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ownership_history_id: 1
+  species: MyString
+  breed: MyString
+  current: false
+  length_of_ownership: 1
+  explanation: MyString
+
+two:
+  ownership_history_id: 1
+  species: MyString
+  breed: MyString
+  current: false
+  length_of_ownership: 1
+  explanation: MyString

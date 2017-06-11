@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  application_id: 1
+  has_fencing: false
+  fence_highest_height: 1
+  fence_lowest_height: 1
+  has_gates: false
+  who_has_yard_access: MyString
+  street_access: false
+
+two:
+  application_id: 1
+  has_fencing: false
+  fence_highest_height: 1
+  fence_lowest_height: 1
+  has_gates: false
+  who_has_yard_access: MyString
+  street_access: false

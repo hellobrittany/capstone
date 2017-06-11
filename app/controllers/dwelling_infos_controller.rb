@@ -1,0 +1,2 @@
+class DwellingInfosController < ApplicationController
+end
