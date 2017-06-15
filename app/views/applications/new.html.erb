@@ -1,15 +1,11 @@
 <h1>New Application</h1>
 
-<%= form_tag '/applications' method: :post do %>
+<%= form_tag '/applications', method: :post do %>
 	<div>
-		<%= label_tag :dog_id %>
-		<%= text_field_tag :dog_id %>
+		<%= label_tag :dog %>
+		<%= text_field_tag :dog %>
 	</div>
 	
-	<div>
-		<%= hidden_label_tag :status %>
-		<%= hidden_field_tag :status %>
-	</div>
 
 	<%= submit_tag "Submit" %>
 <% end %>

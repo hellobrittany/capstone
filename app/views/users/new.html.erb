@@ -47,7 +47,7 @@
 	</div>
 	<div>
 		<%= label_tag "Have kids?" %>
-		<%= check_box_tag :kids %>
+		<%= check_box_tag(:kids, value = "1", checked = false, options = {}) %>
 	</div>
 	<div>
 		<%= label_tag "Type of Dwelling" %>
@@ -55,7 +55,7 @@
 	</div>
 	<div>
 		<%= label_tag "Check box if you own your home" %>
-		<%= check_box_tag :dwelling_owned %>
+		<%= check_box_tag(:dwelling_owned, value = "1", checked = false, options = {} %>
 	</div>
 	<div>
 		<%= label_tag "Check box if you have permission from your landlord to have a dog" %>

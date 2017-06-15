@@ -1,0 +1,73 @@
+<h1>Add Lifestyle Info</h1>
+
+
+<%= form_tag '/lifestyle_infos', method: :post do %>
+	<div>
+		<%= label_tag :application_id %>
+		<%= text_field_tag :application_id %>
+	</div>
+
+	<div>
+	<%= label_tag :allergies %>
+	<%= check_box_tag(:allergies, value = "1", checked = false, options = {}) %>
+</div>
+<div>
+	<%= label_tag :reason_companion %>
+	<%= check_box_tag(:reason_companion, value = "1", checked = false, options = {}) %>
+</div>
+<div>
+	<%= label_tag : %>
+	<%= check_box_tag(:, value = "1", checked = false, options = {}) %>
+</div>
+<div>
+	<%= label_tag :reason_kids %>
+	<%= check_box_tag(:reason_kids, value = "1", checked = false, options = {}) %>
+</div>
+<div>
+	<%= label_tag :reason_gift %>
+	<%= check_box_tag(:reason_gift, value = "1", checked = false, options = {}) %>
+</div>
+<div>
+	<%= label_tag :reason_other_pet %>
+	<%= check_box_tag(:reason_other_pet, value = "1", checked = false, options = {}) %>
+</div>
+<div>
+	<%= label_tag :reason_watchdog %>
+	<%= check_box_tag(:reason_watchdog, value = "1", checked = false, options = {}) %>
+</div>
+<div>
+	<%= label_tag :home_during_day %>
+	<%= check_box_tag(:home_during_day, value = "1", checked = false, options = {}) %>
+</div>
+	<div>
+		<%= label_tag :when_outside %>
+		<%= text_field_tag :when_outside %>
+	</div>
+	<div>
+		<%= label_tag :when_inside %>
+		<%= text_field_tag :when_inside %>
+	</div>
+	<div>
+		<%= label_tag :hours_dog_left_alone %>
+		<%= text_field_tag :hours_dog_left_alone %>
+	</div><div>
+		<%= label_tag :where_dog_sleep %>
+		<%= text_field_tag :where_dog_sleep %>
+	</div>
+
+	<div>
+	<%= label_tag "What outside areas are available to a dog?" %>
+	Fenced Yard <%= radio_button_tag  "outside_areas", "Fenced Yard" %>
+	Enclosed Patio <%= radio_button_tag  "outside_areas", "Enclosed Patio" %>
+	Garage <%= radio_button_tag  "outside_areas", "Garage" %>
+	Balcony <%= radio_button_tag  "outside_areas", "Balcony" %>
+	Dog House <%= radio_button_tag  "outside_areas", "Dog House" %>
+	Other <%= radio_button_tag  "outside_areas", "Other" %>
+	None <%= radio_button_tag  "outside_areas", "None" %>
+
+
+	
+</div>
+
+	
+<% end %>
