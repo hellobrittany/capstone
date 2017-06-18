@@ -55,7 +55,7 @@
 	</div>
 	<div>
 		<%= label_tag "Check box if you own your home" %>
-		<%= check_box_tag(:dwelling_owned, value = "1", checked = false, options = {} %>
+		<%= check_box_tag(:dwelling_owned, value = "1", checked = false, options = {}) %>
 	</div>
 	<div>
 		<%= label_tag "Check box if you have permission from your landlord to have a dog" %>
@@ -78,10 +78,5 @@
 		<%= label_tag :password_confirmation %>
 		<%= password_field_tag :password_confirmation %>
 	</div>
-
-
   <%= submit_tag "Submit" %>
-
-
-
 <% end %>

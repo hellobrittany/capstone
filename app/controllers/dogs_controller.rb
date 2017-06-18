@@ -27,7 +27,18 @@ class DogsController < ApplicationController
 	end
 
 	def update
-		
+		dog = Dog.find(params[:id]) 
+		dog.assign_attributes(
+													name: params[:name], 
+													identifier: params[:identifier]
+													)
+
+		if dog.save
+			flash[:success] = "Successfully added new dog!"
+			render "/dogs/#{dog.id}"
+		else
+			render 'update.html.erb'	
+		end	
 	end
 
 	def destroy

@@ -40,14 +40,43 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		
+		@user = User.find(params[:id])
 	end
 
 	def edit
+		@user = User.find(params[:id])
 		
 	end
 
 	def update
+		user = User.find(params[:id])
+		user.assign_attributes(
+														first_name: params[:first_name], 
+														last_name: params[:last_name],
+														email: params[:email], 
+														address_1: params[:address_1], 
+														address_2: params[:address_2], 
+														city: params[:city], 
+														state: params[:state], 
+														zip: params[:zip], 
+														phone: params[:phone], 
+														spouse_name: params[:spouse_name], 
+														spouse_occupation: params[:spouse_occupation], 
+														kids: params[:kids], 
+														dwelling_type: params[:dwelling_type], 
+														dwelling_owned: params[:dwelling_owned], 
+														landlord_permission: params[:landlord_permission], 
+														landlord_name: params[:landlord_name], 
+														landlord_phone: params[:landlord_phone], 
+														password: params[:password], 
+														password_confirmation: params[:password_confirmation]
+													)
+		if user.save
+			flash[:success] = "You've successfully updated your Account info"
+			redirect_to "/users/#{user.id}"
+		else
+			render 'update.html.erb'	
+		end	
 		
 	end
 

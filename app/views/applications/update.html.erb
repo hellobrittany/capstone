@@ -1,0 +1,12 @@
+<h1>Update application </h1>
+
+
+<%= form_tag '/applications', method: :patch do %>
+	<div>
+		<%= label_tag :dog_id %>
+		<%= text_field_tag :dog_id, value = "#{application.dog_id}" %>
+	</div>
+	
+
+	<%= submit_tag "Submit" %>
+<% end %>
