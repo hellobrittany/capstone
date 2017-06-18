@@ -9,15 +9,12 @@ class DogsController < ApplicationController
 	end
 
 	def create
-		@dog = Dog.new(
+		dog = Dog.new(
 									name: params[:name], 
 									identifier: params[:identifier]
 									)
-		if @dog.save
-			flash[:success] = "Dog Successfully Added"
-			redirect_to "/dogs/#{dog.id}"
-		else
-			render 'new.html.erb'
+		dog.save
+			
 		end	
 	end
 

@@ -1,0 +1,89 @@
+<h1>Add Lifestyle Info</h1>
+
+
+<%= form_tag '/lifestyle_infos', method: :post do %>
+	<div>
+		<%= label_tag "Application id" %>
+		<%= text_field_tag :application_id %>
+	</div>
+
+	<div>
+	<%= label_tag "Check if anyone in your household have allergies" %>
+	<%= check_box_tag(:allergies, value = "1", checked = false, options = {}) %>
+</div>
+
+<p>What are your primary reasons for wanting a dog?</p>
+<div>
+	<%= label_tag "Companion for you" %>
+	<%= check_box_tag(:reason_companion, value = "1", checked = false, options = {}) %>
+</div>
+
+<div>
+	<%= label_tag "For your kids" %>
+	<%= check_box_tag(:reason_kids, value = "1", checked = false, options = {}) %>
+</div>
+<div>
+	<%= label_tag "Gift" %>
+	<%= check_box_tag(:reason_gift, value = "1", checked = false, options = {}) %>
+</div>
+<div>
+	<%= label_tag "For other pet(s)" %>
+	<%= check_box_tag(:reason_other_pet, value = "1", checked = false, options = {}) %>
+</div>
+<div>
+	<%= label_tag "Watchdog" %>
+	<%= check_box_tag(:reason_watchdog, value = "1", checked = false, options = {}) %>
+</div>
+<br>
+<div>
+	<%= label_tag "Check if there is someone home during the day." %>
+	<%= check_box_tag(:home_during_day, value = "1", checked = false, options = {}) %>
+</div>
+	<div>
+		<%= label_tag "When will the dog be outside?" %>
+		<%= text_field_tag :when_outside %>
+	</div>
+	<div>
+		<%= label_tag "Inside?" %>
+		<%= text_field_tag :when_inside %>
+	</div>
+	<div>
+		<%= label_tag "About how many hours a day will the dog be left alone? " %>
+		<%= text_field_tag :hours_dog_left_alone %>
+	</div><div>
+		<%= label_tag "Where will the dog sleep at night?" %>
+		<%= text_field_tag :where_dog_sleep %>
+	</div>
+
+	<div>
+		<p>What outside areas are available to the dog?</p>
+		
+		Fenced Yard <%= radio_button_tag  "outside_areas", "Fenced Yard" %>
+		Enclosed Patio <%= radio_button_tag  "outside_areas", "Enclosed Patio" %>
+		Garage <%= radio_button_tag  "outside_areas", "Garage" %>
+		Balcony <%= radio_button_tag  "outside_areas", "Balcony" %>
+		Dog House <%= radio_button_tag  "outside_areas", "Dog House" %>
+		Other <%= radio_button_tag  "outside_areas", "Other" %>
+		None <%= radio_button_tag  "outside_areas", "None" %>
+	
+</div>
+
+<div>
+		<p>Preferred level of exercise with dog?</p>
+		
+		Couch Potato <%= radio_button_tag  "preferred_level_of_exercise", "Couch Potato" %>
+		Short Walks <%= radio_button_tag  "preferred_level_of_exercise", "Short Walks" %>
+		Vigorous Walks <%= radio_button_tag  "preferred_level_of_exercise", "Vigorous Walks" %>
+		Hike or Jog Regularly <%= radio_button_tag  "preferred_level_of_exercise", "Hike or Jog Regularly" %>
+</div>
+<br>
+
+<div>
+		<%= label_tag "What type of food will you feed the dog?" %>
+		<%= text_field_tag :type_of_dog_food %>
+	</div>
+
+
+
+	
+<% end %>
