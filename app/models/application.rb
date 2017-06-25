@@ -6,5 +6,5 @@ class Application < ApplicationRecord
 	has_one :ownership_history
 	has_one :ownership_profile
 	has_many :owned_pets, through: :ownership_history
-
+	
 end

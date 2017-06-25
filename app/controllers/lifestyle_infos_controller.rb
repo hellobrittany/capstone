@@ -26,6 +26,14 @@ class LifestyleInfosController < ApplicationController
 																				type_of_dog_food: params[:type_of_dog_food]
 
 																				)
+
+		if lifestyle_info.save
+			flash[:success] = "Your lifestyle info has been created."
+			redirect_to '/ownership_histories/new'
+		else
+			flash[:warning] = "Oops, you missed something, double check your input."
+			render 'new.html.erb'
+		end	
 	end
 
 	def show

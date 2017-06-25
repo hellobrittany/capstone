@@ -8,7 +8,7 @@ class OwnershipProfilesController < ApplicationController
 	end
 
 	def create
-		@ownership_profile = OwnershipProfile.new(
+		ownership_profile = OwnershipProfile.new(
 																							application_id: params[:application_id], 
 																							regular_vet: params[:regular_vet],
 																							who_grooms: params[:who_grooms], 
@@ -45,10 +45,10 @@ class OwnershipProfilesController < ApplicationController
 																							)
 		if ownership_profile.save
       flash[:success] = 'Successfully added Ownership Profile!'
-      redirect_to '/'
+      redirect_to '/dwelling_infos/new'
     else
       flash[:warning] = 'Oops, you missed something, double check your input.'
-      redirect_to '/ownership_profiles'
+      render 'new.html.erb'
     end
 	end
 

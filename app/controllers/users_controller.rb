@@ -25,7 +25,8 @@ class UsersController < ApplicationController
 										landlord_name: params[:landlord_name], 
 										landlord_phone: params[:landlord_phone], 
 										password: params[:password], 
-										password_confirmation: params[:password_confirmation]
+										password_confirmation: params[:password_confirmation],
+										current_application: 
 										)
 
 		if user.save

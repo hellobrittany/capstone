@@ -77,6 +77,10 @@
 		Hike or Jog Regularly <%= radio_button_tag  "preferred_level_of_exercise", "Hike or Jog Regularly" %>
 </div>
 <br>
+<div>
+	<%= label_tag "Where will the dog stay when he/she is home alone? (Please be as specific as possible.)" %>
+	<%= text_field_tag :where_dog_stay %>
+</div>
 
 <div>
 		<%= label_tag "What type of food will you feed the dog?" %>
@@ -84,6 +88,6 @@
 	</div>
 
 
-
+<%= submit_tag "Submit" %>
 	
 <% end %>

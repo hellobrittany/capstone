@@ -1,6 +1,22 @@
 class DogsController < ApplicationController
 	def index
 		@dogs = Dog.all
+		
+		dog_id = params[:id]
+		search_term = params[:search_term]
+
+		if dog_id
+			@dogs = Application.find(dog_id)
+		end
+
+		if search_term
+			@dogs = @dogs.where(
+													"name iLIKE ? OR description iLIKE ?", 
+                          "%#{search_term}%",
+                          "%#{search_term}%"
+                         )
+		end	
+			
 	end
 
 	def new
@@ -15,7 +31,7 @@ class DogsController < ApplicationController
 									)
 		dog.save
 			
-		end	
+		
 	end
 
 	def show

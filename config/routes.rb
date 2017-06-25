@@ -59,6 +59,7 @@ Rails.application.routes.draw do
   patch '/ownership_profiles/:id' => 'ownership_profiles#update'
   delete '/ownership_profiles/:id' => 'ownership_profiles#destroy'
 
+  get '/' => 'dogs#index'
   get '/dogs' => 'dogs#index'
   get '/dogs/new' => 'dogs#new'
   post '/dogs' => 'dogs#create'

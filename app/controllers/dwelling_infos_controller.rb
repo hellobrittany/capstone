@@ -17,6 +17,13 @@ class DwellingInfosController < ApplicationController
 																			street_access: params[:street_access], 
 																			who_has_yard_access: params[:who_has_yard_access]
 																			)
+		if dwelling_info.save
+			flash[:success] = "Your dwelling information has been saved."
+			redirect_to "/applications/#{application.id}"
+		else
+			flash[:warning] = "Check that all fields are filled in."
+			render 'new.html.erb'
+		end	
 	end
 
 	def show

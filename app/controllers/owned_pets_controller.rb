@@ -16,7 +16,13 @@ class OwnedPetsController < ApplicationController
 															length_of_ownership: params[:length_of_ownership], 
 															explanation: params[:explanation]
 															)
-		owned_pet.save
+		if owned_pet.save
+			flash[:success] = "Your pet has been saved."
+			redirect_to '/ownership_profiles/new'
+		else
+			flash[:warning] = "Check that all fields are filled in."
+			render 'new.html.erb'
+		end	
 	end
 
 	def show

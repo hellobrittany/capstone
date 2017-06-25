@@ -1,0 +1,8 @@
+<h1>Available Dogs</h1>
+
+<div>
+	Search: <input type="text"> <button>Search</button>
+</div>
+<% @dogs.each do |dog| %>
+	<h2> <%= dog.name %> <%= link_to "Apply for me!", "/" %> </h2> 
+<% end %>
