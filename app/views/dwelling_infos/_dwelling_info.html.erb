@@ -1,4 +1,17 @@
-<p>Has fencing: <%= @dwelling_info.has_fencing %></p>
-<p>Highest fence height: <%= @dwelling_info.fence_highest_height %> inches</p>
-<p>Lowest fence height: <%= @dwelling_info.fence_lowest_height %> inches</p>
-<p>Has Gate:</p>
+<% if  dwelling_info.has_fencing == true %>
+	<p>Has fencing: yes </p>
+<% else %>	
+	<p>Has fencing: no </p>
+<% end %>	
+<p>Highest fence height: <%= dwelling_info.fence_highest_height %> inches</p>
+<p>Lowest fence height: <%= dwelling_info.fence_lowest_height %> inches</p>
+<% if  dwelling_info.has_gates == true %>
+	<p>Has gate: yes </p>
+<% else %>	
+	<p>Has gate: no </p>
+<% end %>	
+<% if  dwelling_info.street_access == true %>
+	<p>Yard is accessible from the street: yes </p>
+<% else %>	
+	<p>Yard is accessible from the street: no </p>
+<% end %>	

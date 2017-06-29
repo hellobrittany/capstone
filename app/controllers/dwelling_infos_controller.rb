@@ -19,10 +19,7 @@ class DwellingInfosController < ApplicationController
 																			)
 		if dwelling_info.save
 			flash[:success] = "Your dwelling information has been saved."
-			redirect_to "/applications/#{application.id}"
-		else
-			flash[:warning] = "Check that all fields are filled in."
-			render 'new.html.erb'
+			redirect_to "/applications/#{application.id}/dwelling_info"
 		end	
 	end
 

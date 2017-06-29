@@ -1,0 +1,119 @@
+<% if ownership_profile.regular_vet == true %>
+	<p>Has a regular vet: yes</p>
+<% else %>	
+	<p>Has a regular vet: no</p>
+<% end %>
+
+<p>Who will groom the dog: <%= ownership_profile.who_grooms %></p>
+
+<% if ownership_profile.wears_collar == true %>
+	<p>Dog will wear a collar: yes</p>
+<% else %>	
+	<p>Dog will wear a collar: no</p>
+<% end %>
+
+<p>Experience level: <%= ownership_profile.experience_level %></p>
+<p>How would you discipline the dog: <%= ownership_profile.discipline_style %></p>
+<h3>Methods of training: </h3>
+<% if ownership_profile.training_obedience_class == true %>
+	<p>Obedience Classes</p>
+<% end %>
+
+<% if ownership_profile.training_hit == true %>
+	<p>Hit with Newspaper</p>
+<% end %>
+
+<% if ownership_profile.training_verbal == true %>
+	<p>Verbal Commands</p>
+<% end %>
+
+<% if ownership_profile.training_clicker == true %>
+	<p>Clicker/Hand signals</p>
+<% end %>
+
+<% if ownership_profile.training_other %>
+	<p> <%= ownership_profile.training_other %>	</p>
+<% end %>
+
+<p>Dog walk style: <%= ownership_profile.dog_walk_style %></p>
+
+<% if ownership_profile.ready == true %>
+	<p>Willing to live with hair, stains, etc.: yes</p>
+<% else %>	
+	<p>Willing to live with hair, stains, etc.: no</p>
+<% end %>
+
+<% if ownership_profile.invested == true %>
+	<p>Can afford to provide medical care, grooming, proper diet and exercise: yes</p>
+<% else %>	
+	<p>Can afford to provide medical care, grooming, proper diet and exercise: no</p>
+<% end %>
+
+<p>Move locally plan: <%= ownership_profile.move_locally_plan %></p>
+<p>Move out of state plan: <%= ownership_profile.move_far_plan %></p>
+<p>Move internationally plan: <%= ownership_profile.move_internationally_plan %></p>
+
+<h3>Reasons they'd give up a dog:</h3>
+
+<% if ownership_profile.gu_excessive_barking %>
+	<p>Excessive Barking</p>
+<% end %>
+
+<% if ownership_profile.gu_digging %>
+	<p>Digging</p>
+<% end %>
+
+<% if ownership_profile.gu_moving %>
+	<p>Moving</p>
+<% end %>
+
+<% if ownership_profile.gu_financial %>
+	<p>Financial Problems</p>
+<% end %>
+
+<% if ownership_profile.gu_divorce %>
+	<p>Divorce</p>
+<% end %>
+
+<% if ownership_profile.gu_poor_watchdog %>
+	<p>Poor watchdog</p>
+<% end %>
+
+<% if ownership_profile.gu_distructive %>
+	<p>Distructive Chewing</p>
+<% end %>
+
+<% if ownership_profile.gu_accidents %>
+	<p>Occasional Accidents Indoors</p>
+<% end %>
+
+<% if ownership_profile.gu_growls %>
+	<p>Growling at Guests</p>
+<% end %>
+
+<% if ownership_profile.gu_vet_bills %>
+	<p>Excessive Vet Bills</p>
+<% end %>
+
+<% if ownership_profile.gu_shedding %>
+	<p>Shedding</p>
+<% end %>
+
+<% if ownership_profile.gu_allergies %>
+	<p>Allergies</p>
+<% end %>
+
+<% if ownership_profile.gu_new_partner %>
+	<p>Spouse/Partner Dislikes Dog</p>
+<% end %>
+
+<% if ownership_profile.gu_aggressive %>
+	<p>Aggressive on Leash</p>
+<% end %>
+
+<% if ownership_profile.gu_other %>
+	<p>Other</p>
+<% end %>
+
+
+	

@@ -20,11 +20,11 @@ class ApplicationsController < ApplicationController
        @applications = @applications.order(sort_attribute)
     end
 
-   render "/lifestyle_infos/show.html.erb"
-   # render 'ownership_histories.show.html.erb'
-   # render 'owned_pets.index.html.erb'
-   # render 'ownership_profiles.show.html.erb'
-   # render 'dwelling_infos.show.html.erb'
+   render "/lifestyle_info"
+   # render '/ownership_histories.show.html.erb'
+   # render '/owned_pets.index.html.erb'
+   # render '/ownership_profiles.show.html.erb'
+   # render '/dwelling_infos.show.html.erb'
 
 
 	end

@@ -18,10 +18,7 @@ class OwnedPetsController < ApplicationController
 															)
 		if owned_pet.save
 			flash[:success] = "Your pet has been saved."
-			redirect_to '/ownership_profiles/new'
-		else
-			flash[:warning] = "Check that all fields are filled in."
-			render 'new.html.erb'
+			redirect_to "/applications/#{application.id}/ownership_profile"
 		end	
 	end
 

@@ -1,2 +1,7 @@
-<p>Number of current pets: <%= @ownership_histories.number_of_current_pets %></p>
-<p>Has allowed breeding: <%= @ownership_histories.allowed_breeding %></p>
+<p>Number of current pets: <%= ownership_history.number_of_current_pets %></p>
+
+<% if ownership_history.allowed_breeding == true %>
+	<p>Has allowed breeding: yes</p>
+<% else %>	
+	<p>Has allowed breeding: no</p>
+<% end %>

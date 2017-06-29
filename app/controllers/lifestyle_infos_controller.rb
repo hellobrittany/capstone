@@ -29,10 +29,7 @@ class LifestyleInfosController < ApplicationController
 
 		if lifestyle_info.save
 			flash[:success] = "Your lifestyle info has been created."
-			redirect_to '/ownership_histories/new'
-		else
-			flash[:warning] = "Oops, you missed something, double check your input."
-			render 'new.html.erb'
+			redirect_to "/applications/#{application.id}/ownership_history"
 		end	
 	end
 

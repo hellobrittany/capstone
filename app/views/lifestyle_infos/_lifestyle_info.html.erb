@@ -1,5 +1,27 @@
+<% if lifestyle_info.allergies == true %>
+	<p>Someone in the household has allergies: yes</p>
+<% else %>
+	<p>Someone in the household has allergies: no</p>
+<% end %>
+<h3>Primary reasons for wanting a dog:</h3>
+
+<% if lifestyle_info.reason_companion == true %>
+	<p>Companion</p>
+<% end %>
+<% if lifestyle_info.reason_kids == true %>
+	<p>For my kids</p>
+<% end %>
+<% if lifestyle_info.reason_gift == true %>
+	<p>Gift</p>
+<% end %>
+<% if lifestyle_info.reason_other_pet == true %>
+	<p>For other pet</p>
+<% end %>
+<% if lifestyle_info.reason_watchdog == true %>
+	<p>Watchdog</p>
+<% end %>
+
 	<p>Dog is outside: <%= lifestyle_info.when_outside %></p>
-	
 	<p>Hours dog is left alone: <%= lifestyle_info.hours_dog_left_alone %></p>
 	<p>At night the dog sleeps: <%= lifestyle_info.where_dog_sleep %></p>
 	<p>Outside areas available to dog: <%= lifestyle_info.outside_areas %></p>
@@ -7,4 +29,3 @@
 	<p>Type of dog food: <%= lifestyle_info.type_of_dog_food %></p>
   <p>When they go out of town, the dog stays with: <%= lifestyle_info.where_dog_stay %></p>
 
-  
