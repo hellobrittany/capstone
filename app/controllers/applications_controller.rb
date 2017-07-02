@@ -28,21 +28,30 @@ class ApplicationsController < ApplicationController
 	end	
 
 	def create
-		application = Application.create(
+		application = Application.create!(
 																			dog_id: params[:dog_id], 
-																			user_id: current_user, 
+																			user_id: current_user.id, 
 																			status: "in progress"
 																		)
-		LifestyleInfo.create(application_id: application.id)
+		lifestyle_info = LifestyleInfo.create(application_id: application.id)
 		DwellingInfo.create(application_id: application.id)
 		OwnershipHistory.create(application_id: application.id)
 		OwnershipProfile.create(application_id: application.id)
 
-		redirect_to "/applications/#{application.id}/lifestyle_info"
+		
+
+		redirect_to "/applications/#{application.id}/lifestyle_info/#{lifestyle_info.id}/edit"
 	end
 
 	def show
 		@application = Application.find(params[:id])
+		@application.lifestyle_info
+		@application.dwelling_info
+		@application.ownership_history
+		@application.ownership_profile
+
+
+
 	end
 
 	def edit

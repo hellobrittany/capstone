@@ -2,8 +2,8 @@
 
 
 <% @dogs.each do |dog| %>
-	<div >
-		<h4> <%= dog.name link_to '/applications/create' %> </h4>
-
-	</div> 
+	<%= form_tag '/applications', method: :post do %>
+		<%= hidden_field_tag :dog_id, dog.id %>
+		<%= submit_tag "#{dog.name}"  %> 
+	<% end %> 
 <% end %>

@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>AvailaBull</title>
+    <title>AdoptaBull</title>
     <meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
     <meta name="author" content="htmlcoder.me">
 
@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="shortcut icon" href="/images/happy_dog.png">
 
     <!-- Web Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -83,58 +83,6 @@
       <!-- header-container start -->
       <div class="header-container">
         
-        <!-- header-top start -->
-        <!-- classes:  -->
-        <!-- "dark": dark version of header top e.g. class="header-top dark" -->
-        <!-- "colored": colored version of header top e.g. class="header-top colored" -->
-        <!-- ================ -->
-        <div class="header-top dark ">
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-2 col-sm-5">
-                <!-- header-top-first start -->
-                <!-- ================ -->
-                <div class="header-top-first clearfix">
-                  <ul class="social-links circle small clearfix hidden-xs">
-                    <li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
-                    <li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
-                    <li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
-                    <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="youtube"><a target="_blank" href="http://www.youtube.com"><i class="fa fa-youtube-play"></i></a></li>
-                    <li class="flickr"><a target="_blank" href="http://www.flickr.com"><i class="fa fa-flickr"></i></a></li>
-                    <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
-                    <li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
-                  </ul>
-                  <div class="social-links hidden-lg hidden-md hidden-sm circle small">
-                    <div class="btn-group dropdown">
-                      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share-alt"></i></button>
-                      <ul class="dropdown-menu dropdown-animation">
-                        <li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
-                        <li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
-                        <li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
-                        <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
-                        <li class="youtube"><a target="_blank" href="http://www.youtube.com"><i class="fa fa-youtube-play"></i></a></li>
-                        <li class="flickr"><a target="_blank" href="http://www.flickr.com"><i class="fa fa-flickr"></i></a></li>
-                        <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
-                        <li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!-- header-top-first end -->
-              </div>
-              <div class="col-xs-10 col-sm-7">
-
-                <!-- header-top-second start -->
-                <!-- ================ -->
-                
-                <!-- header-top-second end -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- header-top end -->
-        
         <!-- header start -->
         <!-- classes:  -->
         <!-- "fixed": enables fixed navigation mode (sticky menu) e.g. class="header fixed clearfix" -->
@@ -153,12 +101,12 @@
 
                   <!-- logo -->
                   <div id="logo" class="logo">
-                    <a href="/"><img id="logo_img" src="#" alt="AvailaBull"></a>
+                    <a href="/"><img id="logo_img" src="/images/logo.png" alt="AdoptaBull"></a>
                   </div>
 
                   <!-- name-and-slogan -->
                   <div class="site-slogan">
-                    Multipurpose HTML5 Template
+                    
                   </div>
                   
                 </div>
@@ -208,8 +156,12 @@
                           <li class="dropdown ">
                             <a href="index-shop.html" class="dropdown-toggle" data-toggle="dropdown">Join Us!</a>
                             <ul class="dropdown-menu">
-                              <li ><a href="/signup">Sign Up!</a></li>
-                              <li ><a href="/login">Sign In!</a></li>
+                              <% if current_user %>
+                                <li ><a href="/logout">Log Out!</a></li>
+                              <% else %>
+                                <li ><a href="/signup">Sign Up!</a></li>
+                                <li ><a href="/login">Log In!</a></li>
+                              <% end %>
                             </ul>
                           </li>
               
@@ -221,15 +173,7 @@
                           </div>
                           <button type="submit" class="btn btn-default">Submit</button>
                         </form>
-                        <!-- header buttons -->
-                        <div class="header-dropdown-buttons">
-                          <a href="index-shop.html" class="btn btn-sm hidden-xs radius-50 btn-default">Store <i class="fa fa-shopping-cart pl-5"></i></a>
-                          <a href="index-shop.html" class="btn btn-lg visible-xs radius-50 btn-block btn-default">Store <i class="fa fa-shopping-cart pl-5"></i></a>
-                        </div>
-                        <!-- header buttons end-->
-                        
                       </div>
-
                     </div>
                   </nav>
                   <!-- navbar end -->
@@ -278,212 +222,7 @@
 
       <!-- section -->
       <!-- ================ -->
-      <section class="main-container">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-md-push-6">
-              <div class="overlay-container overlay-visible">
-                <img src="/images/section-image-4.jpg" alt="">
-                <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
-                <div class="overlay-bottom hidden-xs">
-                  <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt nobis sunt, quae alias impedit ea molestias recusandae.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-md-pull-6">
-              <h3 class="title">Our Dogs are <span class="text-rotator" data-rotator-animation-effect="fadeIn">LovaBull, AdoraBull, AdoptaBull</span></h3>
-              <p>Lorem ipsum dolor sit amet, lotrem <span class="text-default">some colored text</span>. Nulla explicabo <strong>attention to this</strong> blanditiis, ex cupiditate ipsam debitis rem.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing llum magni nam doloribus eligendi, veritatis aspernatur amet odit doloremque possimus error. Vel, totam numquam animi!</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong>Some bold text</strong>, unde voluptatum quidem explicabo et eius aut nisi dolore ut. Sapiente velit quidem, unde fugit. Neque illum, debitis ut, porro natus.</p>
-              <a href="page-about.html" class="btn radius-50 btn-default btn-hvr hvr-shutter-out-horizontal"><i class="icon-users-1 pr-10"></i>Learn More</a>
-            </div>
-          </div>
-        </div>
-        <br>
-      </section>
-      <!-- section end -->
 
-      <!-- section start -->
-      <!-- ================ -->
-      <section class="dark-translucent-bg pv-30" style="background-image:url(images/page-services-banner.jpg);">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-              <h2 class="text-center">Why <strong>Choose</strong> Us?</h2>
-              <div class="separator"></div>
-              <p class="large text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam voluptas facere vero ex tempora saepe perspiciatis ducimus sequi animi.</p>
-            </div>
-            <div class="col-md-4 ">
-              <div class="pv-30 feature-box text-center object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
-                <span class="icon default-bg circle"><i class="fa fa-diamond"></i></span>
-                <h3>We Have Strong Background</h3>
-                <div class="separator clearfix"></div>
-                <p>Voluptatem ad provident non repudiandae beatae cupiditate amet reiciendis lorem ipsum dolor sit amet, consectetur.</p>
-                <a class="btn btn-gray-transparent radius-50 btn-animated" href="page-services.html">Read More <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-            <div class="col-md-4 ">
-              <div class="pv-30 feature-box text-center object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="200">
-                <span class="icon default-bg circle"><i class="fa fa-connectdevelop"></i></span>
-                <h3>We Are Extremely Flexible</h3>
-                <div class="separator clearfix"></div>
-                <p>Iure sequi unde hic. Sapiente quaerat sequi inventore veritatis cumque lorem ipsum dolor sit amet, consectetur.</p>
-                <a class="btn btn-gray-transparent radius-50 btn-animated" href="page-services.html">Read More <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-            <div class="col-md-4 ">
-              <div class="pv-30 feature-box text-center object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">
-                <span class="icon default-bg circle"><i class="fa icon-snow"></i></span>
-                <h3>We Use Latest Technologies</h3>
-                <div class="separator clearfix"></div>
-                <p>Inventore dolores aut laboriosam cum consequuntur delectus sequi lorem ipsum dolor sit amet, consectetur.</p>
-                <a class="btn btn-gray-transparent radius-50 btn-animated" href="page-services.html">Read More <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- section end -->
-
-      <!-- section start -->
-      <!-- ================ -->
-      <section class="light-gray-bg pv-40">
-        <div class="container">
-          <h3><span class="logo-font text-muted">The <span class="text-default">Project</span></span> is Simply Amazing</h3>
-          <div class="row">
-            <div class="col-md-6">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quos excepturi libero, alias vitae ipsam ab delectus? Sequi, dolore! Quas laudantium nam, atque tempore quaerat molestiae dicta amet tenetur soluta!</p>
-              <div class="progress mt-20 style-1">
-                <span class="text"></span>
-                <div class="progress-bar progress-bar-default" data-animate-width="90%">
-                  <span class="label object-non-visible" data-animation-effect="fadeInLeftSmall" data-effect-delay="1000">CSS</span>
-                </div>
-              </div>
-              <div class="progress style-1">
-                <span class="text"></span>
-                <div class="progress-bar progress-bar-default" data-animate-width="95%">
-                  <span class="label object-non-visible" data-animation-effect="fadeInLeftSmall" data-effect-delay="1000">HTML5</span>
-                </div>
-              </div>
-              <div class="progress style-1">
-                <span class="text"></span>
-                <div class="progress-bar progress-bar-default" data-animate-width="80%">
-                  <span class="label object-non-visible" data-animation-effect="fadeInLeftSmall" data-effect-delay="1000">JQUERY</span>
-                </div>
-              </div>
-              <div class="progress style-1">
-                <span class="text"></span>
-                <div class="progress-bar progress-bar-default" data-animate-width="85%">
-                  <span class="label object-non-visible" data-animation-effect="fadeInLeftSmall" data-effect-delay="1000">PHP</span>
-                </div>
-              </div>
-              <div class="progress style-1">
-                <span class="text"></span>
-                <div class="progress-bar progress-bar-default" data-animate-width="75%">
-                  <span class="label object-non-visible" data-animation-effect="fadeInLeftSmall" data-effect-delay="1000">PHOTOSHOP</span>
-                </div>
-              </div>
-              <div class="progress style-1">
-                <span class="text"></span>
-                <div class="progress-bar progress-bar-default" data-animate-width="90%">
-                  <span class="label object-non-visible" data-animation-effect="fadeInLeftSmall" data-effect-delay="1000">DRUPAL</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="owl-carousel content-slider">
-                <div class="testimonial text-center">
-                  <div class="testimonial-image">
-                    <img src="/images/testimonial-1.jpg" alt="Jane Doe" title="Jane Doe" class="img-circle">
-                  </div>
-                  <h3>Just Perfect!</h3>
-                  <div class="separator"></div>
-                  <div class="testimonial-body">
-                    <blockquote>
-                      <p>Sed ut perspiciatis unde omnis iste natu error sit voluptatem accusan tium dolore laud antium, totam rem dolor sit amet tristique pulvinar, turpis arcu rutrum nunc, ac laoreet turpis augue a justo.</p>
-                    </blockquote>
-                    <div class="testimonial-info-1">- Jane Doe</div>
-                    <div class="testimonial-info-2">By Company</div>
-                  </div>
-                </div>
-                <div class="testimonial text-center">
-                  <div class="testimonial-image">
-                    <img src="/images/testimonial-2.jpg" alt="Jane Doe" title="Jane Doe" class="img-circle">
-                  </div>
-                  <h3>Amazing!</h3>
-                  <div class="separator"></div>
-                  <div class="testimonial-body">
-                    <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et cupiditate deleniti ratione in. Expedita nemo, quisquam, fuga adipisci omnis ad mollitia libero culpa nostrum est quia eos esse vel!</p>
-                    </blockquote>
-                    <div class="testimonial-info-1">- Jane Doe</div>
-                    <div class="testimonial-info-2">By Company</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- clients start -->
-          <!-- ================ -->
-          <div class="separator"></div>
-          <div class="clients-container">
-            <div class="clients">
-              <div class="client-image object-non-visible" data-animation-effect="fadeIn" data-effect-delay="100">
-                <a href="#"><img src="/images/client-1.png" alt=""></a>
-              </div>
-              <div class="client-image object-non-visible" data-animation-effect="fadeIn" data-effect-delay="200">
-                <a href="#"><img src="/images/client-2.png" alt=""></a>
-              </div>
-              <div class="client-image object-non-visible" data-animation-effect="fadeIn" data-effect-delay="300">
-                <a href="#"><img src="/images/client-3.png" alt=""></a>
-              </div>
-              <div class="client-image object-non-visible" data-animation-effect="fadeIn" data-effect-delay="400">
-                <a href="#"><img src="/images/client-4.png" alt=""></a>
-              </div>
-              <div class="client-image object-non-visible" data-animation-effect="fadeIn" data-effect-delay="500">
-                <a href="#"><img src="/images/client-5.png" alt=""></a>
-              </div>
-              <div class="client-image object-non-visible" data-animation-effect="fadeIn" data-effect-delay="600">
-                <a href="#"><img src="/images/client-6.png" alt=""></a>
-              </div>
-              <div class="client-image object-non-visible" data-animation-effect="fadeIn" data-effect-delay="700">
-                <a href="#"><img src="/images/client-7.png" alt=""></a>
-              </div>
-              <div class="client-image object-non-visible" data-animation-effect="fadeIn" data-effect-delay="800">
-                <a href="#"><img src="/images/client-8.png" alt=""></a>
-              </div>
-            </div>
-          </div>
-          <!-- clients end -->
-        </div>
-      </section>
-      <!-- section end -->
-
-      <!-- footer top start -->
-      <!-- ================ -->
-      <div class="dark-translucent-bg footer-top animated-text" style="background-color:rgba(0,0,0,0.6);">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="call-to-action text-center">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2>Powerful Bootstrap Template</h2>
-                    <h2>Waste no more time</h2>
-                  </div>
-                  <div class="col-sm-4">
-                    <p class="mt-10"><a href="#" class="btn btn-animated radius-50 btn-lg btn-gray-transparent">Purchase<i class="fa fa-cart-arrow-down pl-20"></i></a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- footer top end -->
-      <!-- footer start (Add "dark" class to #footer in order to enable dark footer) -->
       <!-- ================ -->
       <footer id="footer" class="clearfix dark">
 
@@ -493,81 +232,7 @@
           <div class="container">
             <div class="footer-inner">
               <div class="row">
-                <div class="col-md-3">
-                  <div class="footer-content">
-                    <div class="logo-footer"><img id="logo-footer" src="/images/logo_light_blue.png" alt=""></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus illo vel dolorum soluta consectetur doloribus sit. Delectus non tenetur odit dicta vitae debitis suscipit doloribus. Ipsa, aut voluptas quaerat... <a href="page-about.html">Learn More<i class="fa fa-long-arrow-right pl-5"></i></a></p>
-                    <div class="separator-2"></div>
-                    <nav>
-                      <ul class="nav nav-pills nav-stacked">
-                        <li><a target="_blank" href="http://htmlcoder.me/support">Support</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="page-about.html">About</a></li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="footer-content">
-                    <h2 class="title">Latest From Blog</h2>
-                    <div class="separator-2"></div>
-                    <div class="media margin-clear">
-                      <div class="media-left">
-                        <div class="overlay-container">
-                          <img class="media-object" src="/images/blog-thumb-1.jpg" alt="blog-thumb">
-                          <a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
-                        </div>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="media-heading"><a href="blog-post.html">Lorem ipsum dolor sit amet...</a></h6>
-                        <p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>Mar 23, 2017</p>
-                      </div>
-                      <hr>
-                    </div>
-                    <div class="media margin-clear">
-                      <div class="media-left">
-                        <div class="overlay-container">
-                          <img class="media-object" src="/images/blog-thumb-2.jpg" alt="blog-thumb">
-                          <a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
-                        </div>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="media-heading"><a href="blog-post.html">Lorem ipsum dolor sit amet...</a></h6>
-                        <p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>Mar 22, 2017</p>
-                      </div>
-                      <hr>
-                    </div>
-                    <div class="media margin-clear">
-                      <div class="media-left">
-                        <div class="overlay-container">
-                          <img class="media-object" src="/images/blog-thumb-3.jpg" alt="blog-thumb">
-                          <a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
-                        </div>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="media-heading"><a href="blog-post.html">Lorem ipsum dolor sit amet...</a></h6>
-                        <p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>Mar 21, 2017</p>
-                      </div>
-                      <hr>
-                    </div>
-                    <div class="media margin-clear">
-                      <div class="media-left">
-                        <div class="overlay-container">
-                          <img class="media-object" src="/images/blog-thumb-4.jpg" alt="blog-thumb">
-                          <a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
-                        </div>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="media-heading"><a href="blog-post.html">Lorem ipsum dolor sit amet...</a></h6>
-                        <p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>Mar 21, 2017</p>
-                      </div>
-                    </div>
-                    <div class="text-right space-top">
-                      <a href="blog-large-image-right-sidebar.html" class="link-dark"><i class="fa fa-plus-circle pl-5 pr-5"></i>More</a>
-                    </div>
-                  </div>
-                </div>
+                
                 <div class="col-md-3">
                   <div class="footer-content">
                     <h2 class="title">Portfolio Gallery</h2>
@@ -660,7 +325,7 @@
             <div class="subfooter-inner">
               <div class="row">
                 <div class="col-md-12">
-                  <p class="text-center">Copyright © 2017 The Project by <a target="_blank" href="http://htmlcoder.me">HtmlCoder</a>. All Rights Reserved</p>
+                  <p class="text-center">Copyright © 2017</p>
                 </div>
               </div>
             </div>
