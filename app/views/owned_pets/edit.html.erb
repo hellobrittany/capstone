@@ -1,0 +1,31 @@
+<h1>Add information about your pets!</h1>
+
+<%= form_tag '/owned_pets', method: :post do %>
+	<div>  
+		<%= label_tag "ownership history id" %>
+		<%= text_field_tag :ownership_history_id %>
+	</div>
+	<div>  
+		<%= label_tag :species %>
+		<%= text_field_tag :species %>
+	</div>
+	<div>  
+		<%= label_tag :breed %>
+		<%= text_field_tag :breed %>
+	</div>
+	<div>  
+		<%= label_tag "Do you currently own this pet?" %>
+		<%= check_box_tag(:current, value = '1', checked = false) %>
+	</div>
+	<div>  
+		<%= label_tag :length_of_ownership %>
+		<%= text_field_tag :length_of_ownership %>
+	</div>
+	<div>  
+		<%= label_tag "If this pet is no longer with you, explain why." %>
+		<%= text_field_tag :explanation %>
+	</div>
+	
+	<%= submit_tag 'Add Pet' %>
+	
+<% end %>

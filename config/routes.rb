@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get '/' => 'applications#index'
+  
+  get '/' => 'pages#index'
+
   get '/applications' => 'applications#index'
   get '/applications/new' => 'applications#new'
   post '/applications' => 'applications#create'
@@ -59,7 +61,7 @@ Rails.application.routes.draw do
   patch '/applications/:id/ownership_profile/:id' => 'ownership_profiles#update'
   delete '/applications/:id/ownership_profile/:id' => 'ownership_profiles#destroy'
 
-  get '/' => 'dogs#index'
+  
   get '/dogs' => 'dogs#index'
   get '/dogs/new' => 'dogs#new'
   post '/dogs' => 'dogs#create'

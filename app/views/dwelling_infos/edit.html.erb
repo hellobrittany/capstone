@@ -1,0 +1,38 @@
+<h1>Add Dwelling Info</h1>
+<%= form_tag '/dwelling_infos', method: :post do %>
+<div class="input-group">
+	<%= label_tag "Application id" %>
+	<%= text_field_tag :application_id, class: 'form-control' %>
+</div>
+<div class="input-group">
+	<%= label_tag "Check if you have a fence" %>
+	<%= check_box_tag(:has_fencing, class: 'form-control', value = "1", checked = false, options = {}) %>
+</div>
+<div class="input-group">
+	<%= label_tag "What is the highest height of your fence?" %>
+	<%= text_field_tag :fence_highest_height, class: 'form-control' %>
+</div>
+<div class="input-group">
+	<%= label_tag "What is the lowest height of your fence?" %>
+	<%= text_field_tag :fence_lowest_height, class: 'form-control' %>
+</div>
+<div class="input-group">
+	<%= label_tag "Does your fence have a gate?" %>
+	<%= check_box_tag(:has_gates, class: 'form-control', value = "1", checked = false, options = {}) %>
+</div>
+<div class="input-group">
+	<%= label_tag "Is your yard accessible from the street?" %>
+	<%= check_box_tag(:street_access, value = "1", checked = false, options = {}) %>
+</div>
+<div class="input-group">
+<%= label_tag "Who has access to your yard?" %>
+	Poolman <%= radio_button_tag  "who_has_yard_access", "Poolman" %>
+	Gardner <%= radio_button_tag  "who_has_yard_access", "Gardner" %>
+	Utility <%= radio_button_tag  "who_has_yard_access", "Utility" %>
+	Neighbor <%= radio_button_tag  "who_has_yard_access", "Neighbor" %>
+	Other <%= radio_button_tag  "who_has_yard_access", "Other" %>
+	N/A <%= radio_button_tag  "who_has_yard_access", "N/A" %>
+</div>
+
+<%= submit_tag "add dwelling info" %>
+<% end %>

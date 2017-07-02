@@ -1,6 +1,6 @@
 class DwellingInfosController < ApplicationController
 	def index
-		@dwelling_infos = DwellingInfo.all? { |e|  }
+		@dwelling_infos = DwellingInfo.all
 	end
 
 	def new

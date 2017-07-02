@@ -14,7 +14,7 @@
 
 <p>Experience level: <%= ownership_profile.experience_level %></p>
 <p>How would you discipline the dog: <%= ownership_profile.discipline_style %></p>
-<h3>Methods of training: </h3>
+<p>Methods of training: </p>
 <% if ownership_profile.training_obedience_class == true %>
 	<p>Obedience Classes</p>
 <% end %>
@@ -29,10 +29,6 @@
 
 <% if ownership_profile.training_clicker == true %>
 	<p>Clicker/Hand signals</p>
-<% end %>
-
-<% if ownership_profile.training_other %>
-	<p> <%= ownership_profile.training_other %>	</p>
 <% end %>
 
 <p>Dog walk style: <%= ownership_profile.dog_walk_style %></p>
@@ -53,7 +49,7 @@
 <p>Move out of state plan: <%= ownership_profile.move_far_plan %></p>
 <p>Move internationally plan: <%= ownership_profile.move_internationally_plan %></p>
 
-<h3>Reasons they'd give up a dog:</h3>
+<p>Reasons they'd give up a dog:</p>
 
 <% if ownership_profile.gu_excessive_barking %>
 	<p>Excessive Barking</p>

@@ -1,5 +1,8 @@
 <h2>Index Page! For admin only!</h2>
 
 <% @applications.each do |application| %>
-	application.
+	<div>
+		<h2>Dog Name: <%= application.dog.name %></h2> 
+		<h3>Identifier: <%= application.dog.identifier %></h3> 
+	</div>
 <% end %>
