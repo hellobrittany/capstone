@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy' 
 
   
   get '/' => 'pages#index'
@@ -70,4 +70,23 @@ Rails.application.routes.draw do
   patch '/dogs/:id' => 'dogs#update'
   delete '/dogs/:id' => 'dogs#destroy'
 
+  namespace :api do
+    namespace :v1 do
+      patch '/applications/:id' => 'applications#update'
+      patch '/applications/:id/dwelling_info/:id' => 'dwelling_infos#update'
+      patch '/applications/:id/lifestyle_info/:id' => 'lifestyle_infos#update'
+      get '/owned_pets' => 'owned_pets#index'
+      get '/owned_pets/new' => 'owned_pets#new'
+      post '/owned_pets' => 'owned_pets#create'
+      get '/owned_pets/:id' => 'owned_pets#show'
+      get '/owned_pets/:id/edit' => 'owned_pets#edit'
+      patch '/owned_pets/:id' => 'owned_pets#update'
+      delete '/owned_pets/:id' => 'owned_pets#destroy'
+      patch '/applications/:id/ownership_history/:id' => 'ownership_histories#update'
+      patch '/applications/:id/ownership_profile/:id' => 'ownership_profiles#update'
+    end
+  end
+
 end
+
+

@@ -1,9 +1,6 @@
 <h1>Add Dwelling Info</h1>
 <%= form_tag '/dwelling_infos', method: :post do %>
-<div class="input-group">
-	<%= label_tag "Application id" %>
-	<%= text_field_tag :application_id, class: 'form-control' %>
-</div>
+
 <div class="input-group">
 	<%= label_tag "Check if you have a fence" %>
 	<%= check_box_tag(:has_fencing, class: 'form-control', value = "1", checked = false, options = {}) %>

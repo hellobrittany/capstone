@@ -41,9 +41,9 @@ class OwnershipHistoriesController < ApplicationController
 
 		if ownership_history.save
 			flash[:success] = "Your Ownership History has been updated!"
-			redirect_to "/ownership_histories/#{ownership_history.id}"
+			redirect_to "owned_pets/new"
 		else
-			render 'update.html.erb'	
+			render 'edit.html.erb'	
 		end	
 		
 	end
