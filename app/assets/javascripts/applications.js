@@ -75,12 +75,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       //add models
       newOwnedPet: "", 
-      ownedPets: []
+      ownedPets: [],
+      newLifestyleInfo: {}
       },
     
 
     methods: {
-        addOwnedPet: function() {
+      addOwnedPet: function() {
         this.errors = [];
         var params = {
                        id: this.ownershipHistoryId,
@@ -104,33 +105,62 @@ document.addEventListener("DOMContentLoaded", function(event) {
       },
 
       updateLifestyleInfo: function() {
+          this.errors = [];
+          var params = {
+                        allergies: this.allergies,
+                        "reason_companion": this.reasonCompanion,
+                        "reason_kids": this.reasonKids,
+                        "reason_gift": this.reasonGift,
+                        "reason_other_pet": this.reasonOtherPet,
+                        "reason_watchdog": this.reasonWatchdog,
+                        "home_during_day": this.homeDuringDay,
+                        "when_outside": this.whenOutside,
+                        "when_inside": this.whenInside, 
+                        "hours_dog_left_alone": this.hoursDogLeftAlone, 
+                        "where_dog_sleep": this.whereDogSleep, 
+                        "outside_areas": this.outsideAreas, 
+                        "preferred_level_of_exercise": this.preferredLevelOfExercise, 
+                        "type_of_dog_food": this.typeOfDogFood,
+                        "where_dog_stay": this.whereDogStay
+                        };
+          $.post('/api/v1/applications.json', params, function(newLifestyleInfo) {
+            this.newLifestyleInfo.push(newLifestyleInfo);
+            
+          }.bind(this)).fail( function(response) {
+            this.errors = response.responseJSON.errors;
+          }.bind(this));
+      },  
+
+      updateOwnershipHistory: function() {
         this.errors = [];
         var params = {
-                      this.allergies,
-                      this.reasonCompanion,
-                      this.reasonKids,
-                      this.reasonGift,
-                      this.reasonOtherPet,
-                      this.reasonWatchdog,
-                      this.homeDuringDay,
-                      this.whenOutside,
-                      this.whenInside, 
-                      this.hoursDogLeftAlone, 
-                      this.whereDogSleep, 
-                      this.outsideAreas, 
-                      this.preferredLevelOfExercise, 
-                      this.typeOfDogFood,
-                      this.whereDogStay, 
-
+                      "number_of_current_pets": this.numberOfCurrentPets,
+                      "allowed_breeding": this.allowedBreeding 
                       };
+        $.post('/api/v1/applications.json', params, function(newOwnershipHistory) {
+            this.newOwnershipHistory.push(newOwnershipHistory);
+            
+          }.bind(this)).fail( function(response) {
+            this.errors = response.responseJSON.errors;
+          }.bind(this));
+
+      },      
       },
-    }  
 
 
 
-      //syntax for model to send params to API, Rails needs this:
-      {
-        "number_of_current_pets": numberOfCurrentPets
-      }
+
+
+
+
+
+
+
+
+
+
+
+
+    
   });
 });
