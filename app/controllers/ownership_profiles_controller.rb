@@ -101,9 +101,6 @@ class OwnershipProfilesController < ApplicationController
 
 			if ownership_profile.save
 				flash[:success] = "Ownership Profile has been updated"
-				redirect_to "/ownership_profiles/#{ownership_profile.id}"
-			else
-				render update.html.erb
 			end	
 	end
 

@@ -45,9 +45,6 @@ class DwellingInfosController < ApplicationController
 
 		if dwelling_info.save
 			flash[:success] = "Successfully Updated your Dwelling Info!"
-			redirect_to "/dwelling_infos/#{dwelling_info.id}"	
-		else
-			render 'update.html.erb'	
 		end
 			
 	end

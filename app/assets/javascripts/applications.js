@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       moveInternationallyPlan: "", 
       guExcessiveBarking: "", 
       guBiting: "", 
-      gudigging: "",
+      guDigging: "",
       guMoving: "",
       guDivorce: "",
       guPoorWatchdog: "",

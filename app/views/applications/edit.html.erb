@@ -1,11 +1,26 @@
 <div id="app">
+
+
+
+
+
+
+<h3>Lifestyle Information</h3>
+<div class="container">
+  
   <form action="" class="lifestyle-info">
     Does anyone in your household have allergies? <input type="checkbox" v-model="allergies" >
+    <div class="form-group">
+      <label for="exampleInputEmail1">question that you want to answer</label>
+      <input type="email" class="form-control" id="exampleInputEmail1">
+    </div>
     <br>
     What are your primary reasons for wanting a dog? (Check all that apply)
-    <input type="checkbox" v-model="reasonCompanion">  <input type="checkbox" v-model="reasonKids">
-    <input type="checkbox" v-model="reasonGift">  <input type="checkbox" v-model="reasonOtherPet">
-    <input type="checkbox" v-model="reasonWatchdog">
+    Companion for You<input type="checkbox" v-model="reasonCompanion"> 
+    For your Kids<input type="checkbox" v-model="reasonKids">
+    Gift <input type="checkbox" v-model="reasonGift">  
+    For your Other Pet(s) <input type="checkbox" v-model="reasonOtherPet">
+    Watchdog <input type="checkbox" v-model="reasonWatchdog">
     <br>
     Is anyone home during the day? <input type="text" v-model="homeDuringDay">
     <br>
@@ -38,13 +53,17 @@
     <br>
     <input type="submit" value="Submit">
   </form>
+</div>
 
+  <h3>Ownership History</h3>
   <form action="" class="ownership-history">
     How many pets do you currently have? <input type="text" v-model="numberOfCurrentPets">
     <br>
     Have you ever allowed your pets to breed? <input type="checkbox" v-model="allowedBreeding">
     <input type="submit" value="Submit">
   </form>
+
+  <h3>Add a Pet</h3>
 
   <form class="owned-pet">
     <input type="text" v-model="ownershipHistoryId" value="hidden">
@@ -61,8 +80,83 @@
     <input type="submit" value="Add Pet">
   </form>
 
+  <h3>Ownership Profile</h3>
+
   <form class="ownership-profile">
-    
+    Who will groom your dog?  <input type="text" v-model="whoGrooms">
+    <br>
+    Do you have a current, regular vet? <input type="checkbox" v-model="regularVet">
+    <br>
+    Check the box if your dog will wear a collar. <input type="checkbox" v-model="wearsCollar">
+    <br>
+    What is your level of experience owning a dog?  <input type="text" v-model="experienceLevel">
+    <br>
+    How would you discipline your dog if he or she misbehaved?  <input type="text" v-model="disciplineStyle">
+    <br>
+    How would you train this dog? 
+    Obedience Class <input type="checkbox" v-model="trainingObedienceClass">
+    Hit with Newspaper <input type="checkbox" v-model="trainingHit">
+    Verbal Commands <input type="checkbox" v-model="trainingVerbal">
+    Clicker/Hand Signals <input type="checkbox" v-model="trainingClicker">
+    Other <input type="checkbox" v-model="trainingOther">
+    <br>
+    How do you normally walk your dog? <input type="text" v-model="dogWalkStyle">
+    <br>
+    Are you willing to live with hair on furniture, stains on your rugs, a warm body in your bed, and an animal that might be destructive at times? <input type="checkbox" v-model="ready">
+    <br>
+    Pets are an investment of your time and money. Can you afford to provide medical care, grooming, proper diet, shelter and exercise for your new pet? <input type="checkbox" v-model="invested">
+    <br>
+    What would happen to your pets if you moved?
+    <br>
+    Locally? <input type="text" v-model="moveLocallyPlan">
+    Out of State? <input type="text" v-model="moveFarPlan">
+    Internationally? <input type="text" v-model="moveInternationallyPlan">
+    <br>
+    Which of the following reasons might prompt you to give up your dog? (Check all that apply) 
+    <br>
+    Excessive Barking <input type="checkbox" v-model="guExcessiveBarking">
+    Biting <input type="checkbox" v-model="guBiting">
+    Digging <input type="checkbox" v-model="guDigging">
+    Moving <input type="checkbox" v-model="guMoving">
+    Divorce <input type="checkbox" v-model="guDivorce">
+    Poor Watchdog <input type="checkbox" v-model="guPoorWatchdog">
+    Distructive Chewing <input type="checkbox" v-model="guDistructive">
+    Financial Problems <input type="checkbox" v-model="guFinancial">
+    Excessive Accidents Indoors <input type="checkbox" v-model="guAccidents">
+    Growling at Guests <input type="checkbox" v-model="guGrowls">
+    Excessive Vet Bills <input type="checkbox" v-model="guVetBills">
+    Shedding <input type="checkbox" v-model="guShedding">
+    Allergies <input type="checkbox" v-model="guAllergies">
+    Spouse/Partner does not like the Dog <input type="checkbox" v-model="guNewPartner">
+    Aggressive <input type="checkbox" v-model="guAggressive">
+    Other <input type="checkbox" v-model="guOther">
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <h3>Dwelling Information</h3>
+
+  <form class="dwelling-info">
+    Does your Home have a fenced yard? <input type="checkbox" v-model="hasFencing">
+    <br>
+    What is the highest height of your fence? <input type="text" v-model="fenceHighestHeight">
+    <br>
+    What is the lowest height of your fence? <input type="text" v-model="fenceLowestHeight">
+    <br>
+    Does your fence have a gate? <input type="checkbox" v-model="hasGates">
+    <br>
+    Is your yard accessible from the street? <input type="checkbox" v-model="streetAccess">
+    <br>
+    Who has access to your yard?
+    <br>
+    Poolman <input type="radio" v-model="whoHasYardAccess">
+    Gardner <input type="radio" v-model="whoHasYardAccess">
+    Utility Company <input type="radio" v-model="whoHasYardAccess">
+    Neighbor <input type="radio" v-model="whoHasYardAccess">
+    Other <input type="radio" v-model="whoHasYardAccess">
+    N/A <input type="radio" v-model="whoHasYardAccess">
+    <br>
+    <input type="submit" value="Submit">
   </form>
 
   

@@ -65,9 +65,6 @@ class LifestyleInfosController < ApplicationController
 
 		if lifestyle_info.save
 			flash[:success] = "Your lifestyle info has been updated!"
-			redirect_to "/applications/#{current_user.id}/ownership_history/#{ownership_history.id}/edit"
-		else
-			render 'edit.html.erb'	
 		end	
 
 	end

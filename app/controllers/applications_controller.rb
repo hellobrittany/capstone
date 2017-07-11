@@ -40,7 +40,7 @@ class ApplicationsController < ApplicationController
 
 		
 
-		redirect_to "/applications/#{application.id}/lifestyle_info/#{lifestyle_info.id}/edit"
+		redirect_to "/applications/#{application.id}/edit"
 	end
 
 	def show

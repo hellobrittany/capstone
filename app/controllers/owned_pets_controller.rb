@@ -18,7 +18,6 @@ class OwnedPetsController < ApplicationController
 															)
 		if owned_pet.save
 			flash[:success] = "Your pet has been saved."
-			redirect_to "/applications/#{application.id}/ownership_profile"
 		end	
 	end
 
