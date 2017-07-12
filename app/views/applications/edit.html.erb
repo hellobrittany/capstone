@@ -1,27 +1,41 @@
 <div id="app">
-
+<div id="application-id" class="hidden"><input type="hidden"> @application.id </div>
 
 
 
 
 
 <h3>Lifestyle Information</h3>
-<div class="container">
-  
+  <div class="container">
+
   <form action="" class="lifestyle-info">
-    Does anyone in your household have allergies? <input type="checkbox" v-model="allergies" >
-    <div class="form-group">
-      <label for="exampleInputEmail1">question that you want to answer</label>
-      <input type="email" class="form-control" id="exampleInputEmail1">
-    </div>
     <br>
     What are your primary reasons for wanting a dog? (Check all that apply)
-    Companion for You<input type="checkbox" v-model="reasonCompanion"> 
-    For your Kids<input type="checkbox" v-model="reasonKids">
-    Gift <input type="checkbox" v-model="reasonGift">  
-    For your Other Pet(s) <input type="checkbox" v-model="reasonOtherPet">
-    Watchdog <input type="checkbox" v-model="reasonWatchdog">
-    <br>
+    <div class="checkbox">
+      <label>
+         <input type="checkbox" v-model="reasonCompanion">Companion for You
+        <br>
+        <input type="checkbox" v-model="reasonKids">For your Kids
+        <br>
+        <input type="checkbox" v-model="reasonGift">Gift   
+        <br>
+        <input type="checkbox" v-model="reasonOtherPet">For your Other Pet(s) 
+        <br>
+        <input type="checkbox" v-model="reasonWatchdog">Watchdog 
+        <br>
+      </label>
+    </div>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="" v-model="allergies">
+          Does anyone in your household have allergies?
+        </label>
+      </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">About how many hours per day would the dog be left alone?</label>
+      <input type="text" class="form-control" id="exampleInputEmail1">
+    </div>
     Is anyone home during the day? <input type="text" v-model="homeDuringDay">
     <br>
     When would the dog be outside? <input type="text" v-model="whenOutside">
@@ -51,7 +65,7 @@
     <br>
     What type of food will you feed the dog? <input type="text" v-model="typeOfDogFood">
     <br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" v-on:click="updateLifestyleInfo(newLifestyleInfo)">
   </form>
 </div>
 
