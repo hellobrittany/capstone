@@ -1,9 +1,12 @@
 <h1>Available Dogs</h1>
 
 
+<div class="container">
 <% @dogs.each do |dog| %>
+  <img src=<%= dog.image_url %> alt="Dog">
 	<%= form_tag '/applications', method: :post do %>
 		<%= hidden_field_tag :dog_id, dog.id %>
 		<%= submit_tag "#{dog.name}"  %> 
 	<% end %> 
 <% end %>
+</div>

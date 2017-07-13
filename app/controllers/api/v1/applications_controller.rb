@@ -34,12 +34,15 @@ class Api::V1::ApplicationsController < ApplicationController
                                       preferred_level_of_exercise: params[:preferred_level_of_exercise], 
                                       type_of_dog_food: params[:type_of_dog_food]
                                     )
+
+    lifestyle_info.save!
+
     ownership_history = OwnershipHistory.find(params[:id])
     ownership_history.assign_attributes(
                                         number_of_current_pets: params[:number_of_current_pets], 
                                         allowed_breeding: params[:allowed_breeding],
                                         )
-    ownership_history.save
+    ownership_history.save!
 
     ownership_profile = OwnershipProfile.find(params[:id])
     ownership_profile.assign_attributes( 
@@ -76,7 +79,7 @@ class Api::V1::ApplicationsController < ApplicationController
                                         gu_aggressive: params[:gu_aggressive], 
                                         gu_other: params[:gu_other]
                                         )
-    ownership_profile.save
+    ownership_profile.save!
 
     dwelling_info = DwellingInfo.find(params[:id])
     dwelling_info.assign_attributes( 
@@ -87,13 +90,13 @@ class Api::V1::ApplicationsController < ApplicationController
                                     street_access: params[:street_access], 
                                     who_has_yard_access: params[:who_has_yard_access]
                                     )
-    dwelling_info.save
+    dwelling_info.save!
 
 
 
-    if application.save
-      flash[:success] = "Application updated!"
-    end
+    # if application.save
+    #   flash[:success] = "Application updated!"
+    # end
 
   end
 

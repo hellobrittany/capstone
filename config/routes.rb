@@ -73,8 +73,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       patch '/applications/:id' => 'applications#update'
-      patch '/applications/:id/dwelling_info/:id' => 'dwelling_infos#update'
-      patch '/applications/:id/lifestyle_info/:id' => 'lifestyle_infos#update'
+      patch '/applications/:id/dwelling_info/:id' => 'dapplications#update'
+      patch '/applications/:id/lifestyle_info/:id' => 'applications#update'
       get '/owned_pets' => 'owned_pets#index'
       get '/owned_pets/new' => 'owned_pets#new'
       post '/owned_pets' => 'owned_pets#create'
@@ -82,8 +82,8 @@ Rails.application.routes.draw do
       get '/owned_pets/:id/edit' => 'owned_pets#edit'
       patch '/owned_pets/:id' => 'owned_pets#update'
       delete '/owned_pets/:id' => 'owned_pets#destroy'
-      patch '/applications/:id/ownership_history/:id' => 'ownership_histories#update'
-      patch '/applications/:id/ownership_profile/:id' => 'ownership_profiles#update'
+      patch '/applications/:id/ownership_history/:id' => 'applications#update'
+      patch '/applications/:id/ownership_profile/:id' => 'applications#update'
     end
   end
 

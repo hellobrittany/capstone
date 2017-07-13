@@ -1,12 +1,12 @@
 <div id="app">
-<div id="application-id" class="hidden"><input type="hidden"> @application.id </div>
+<div id="application-id" class="hidden"><%= @application.id %></div>
 
 
 
 
 
 <h3>Lifestyle Information</h3>
-  <div class="container">
+  <div class="container" id="LifestyleInfo" >
 
   <form action="" class="lifestyle-info">
     <br>
@@ -74,7 +74,7 @@
     How many pets do you currently have? <input type="text" v-model="numberOfCurrentPets">
     <br>
     Have you ever allowed your pets to breed? <input type="checkbox" v-model="allowedBreeding">
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" v-on:click="updateOwnershipHistory(newOwnershipHistory)">
   </form>
 
   <h3>Add a Pet</h3>
@@ -145,7 +145,7 @@
     Aggressive <input type="checkbox" v-model="guAggressive">
     Other <input type="checkbox" v-model="guOther">
     <br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" v-on:click="updateOwnershipProfile(newOwnershipProfile)">
   </form>
 
   <h3>Dwelling Information</h3>
@@ -170,7 +170,7 @@
     Other <input type="radio" v-model="whoHasYardAccess">
     N/A <input type="radio" v-model="whoHasYardAccess">
     <br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" v-on:click="updateDwellingInfo(newDwellingInfo)">
   </form>
 
   

@@ -27,7 +27,8 @@ class DogsController < ApplicationController
 	def create
 		dog = Dog.new(
 									name: params[:name], 
-									identifier: params[:identifier]
+									identifier: params[:identifier],
+									image_url: params[:image_url]
 									)
 		dog.save
 			
@@ -46,7 +47,8 @@ class DogsController < ApplicationController
 		dog = Dog.find(params[:id]) 
 		dog.assign_attributes(
 													name: params[:name], 
-													identifier: params[:identifier]
+													identifier: params[:identifier],
+													image_url: params[:image_url]
 													)
 
 		if dog.save

@@ -76,7 +76,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
       //add models
       newOwnedPet: "", 
       ownedPets: [],
-      newLifestyleInfo: {}
+      newLifestyleInfo: {},
+      newOwnershipHistory: {},
+      newOwnershipProfile: {},
+      newDwellingInfo: {}
       },
     
 
@@ -84,14 +87,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
       addOwnedPet: function() {
         this.errors = [];
         var params = {
-                       id: this.ownershipHistoryId,
-                       species: this.species,
-                       breed: this.breed, 
-                       current: this.current, 
+                       "id": this.ownershipHistoryId,
+                       "species": this.species,
+                       "breed": this.breed, 
+                       "current": this.current, 
                        "length_of_ownership": this.lengthOfOwnership, 
-                       explanation: this.explanation
+                       "explanation": this.explanation
                       };
-        $.post('/api/v1/applications.json', params, function(newOwnedPet) {
+        $.post('/api/v1/owned_pets.json', params, function(newOwnedPet) {
           this.ownedPets.push(newOwnedPet);
           this.species = '';
           this.breed = '';
@@ -106,10 +109,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       updateLifestyleInfo: function(newLifestyleInfo) {
         this.errors = [];
-        var applicationId = document.getElementById("application-id");
-        console.log("this works");
+        var applicationId = document.getElementById("application-id").innerHTML;
         var params = {
-                      allergies: this.allergies,
+                      "allergies": this.allergies,
                       "reason_companion": this.reasonCompanion,
                       "reason_kids": this.reasonKids,
                       "reason_gift": this.reasonGift,
@@ -125,9 +127,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
                       "type_of_dog_food": this.typeOfDogFood,
                       "where_dog_stay": this.whereDogStay
                       };
-        console.log("hi");
+        
           $.ajax({
-            url: '/api/v1/applications/' + applicationId.innerHTML + '/lifestyle_info/' + applicationId.innerHTML, 
+            url: '/api/v1/applications/' + applicationId + '/lifestyle_info/1.json', 
             type: 'PATCH', 
             dataType: 'json', 
             data: params, 
@@ -141,14 +143,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
           });
       },  
 
-      updateOwnershipHistory: function() {
+      updateOwnershipHistory: function(newOwnershipHistory) {
         this.errors = [];
+        var applicationId = document.getElementById("application-id").innerHTML;
         var params = {
                       "number_of_current_pets": this.numberOfCurrentPets,
                       "allowed_breeding": this.allowedBreeding 
                       };
         $.ajax({
-          url: '/api/v1/applications/', 
+          url: '/api/v1/applications/' + applicationId + '/ownership_history/1.json', 
           type: 'PATCH', 
           dataType: 'json', 
           data: params, 
@@ -161,8 +164,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });      
       },
 
-      updateOwnershipProfile: function() {
+      updateOwnershipProfile: function(newOwnershipProfile) {
         this.errors = [];
+        var applicationId = document.getElementById("application-id").innerHTML;
         var params = {
                       
                       "regular_vet": this.regularVet,
@@ -199,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                       "gu_other": this.guOther
                       };
         $.ajax({
-          url: '/api/v1/applications/', 
+          url: '/api/v1/applications/' + applicationId + '/ownership_profile/1.json', 
           type: 'PATCH', 
           dataType: 'json', 
           data: params, 
@@ -213,6 +217,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       },
 
       updateDwellingInfo: function() {
+        var applicationId = document.getElementById("application-id").innerHTML;
         this.errors = [];
         var params = {
                       
@@ -225,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
                       };
         $.ajax({
-          url: '/api/v1/applications/', 
+          url: '/api/v1/applications/' + applicationId + '/dwelling_info/1.json', 
           type: 'PATCH', 
           dataType: 'json', 
           data: params, 

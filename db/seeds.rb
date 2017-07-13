@@ -1,65 +1,53 @@
+# Dog.create!(
+# 						name: "Frances", 
+# 						identifier: "12345", 
+# 						image_url: "https://scontent-sjc2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18722868_100103847255566_1888427206573555712_n.jpg")
+
+# Dog.create!(
+# 						name: "Theo", 
+# 						identifier: "12346", 
+# 						image_url: "https://s-media-cache-ak0.pinimg.com/736x/75/32/f9/7532f9e27032987b5ccd41b28c04f288--cute-french-bulldog-dog-collars.jpg")
+
+# Dog.create!(
+# 						name: "Wonk-E", 
+# 						identifier: "12347", 
+# 						image_url: "https://s-media-cache-ak0.pinimg.com/236x/49/9a/1a/499a1a8420635fc71153f33983723648.jpg")
+
+# Dog.create!(
+# 						name: "Huxley", 
+# 						identifier: "12348", 
+# 						image_url: "https://s-media-cache-ak0.pinimg.com/736x/26/4e/4b/264e4bcafc7e533299c1551c5e15b534--road-trip-pet-memorials.jpg")
+
+# Dog.create!(
+# 						name: "Magnus", 
+# 						identifier: "12349", 
+# 						image_url: "https://s-media-cache-ak0.pinimg.com/236x/49/9a/1a/499a1a8420635fc71153f33983723648.jpg")
 
 
 
-Dog.create!(
-						name: "Frances", 
-						identifier: "12345")
-
-Dog.create!(
-						name: "Poplolly", 
-						identifier: "12346")
-
-Dog.create!(
-						name: "Wonk-E", 
-						identifier: "12347")
-
-Dog.create!(
-						name: "DeDe", 
-						identifier: "12348")
-
-Dog.create!(
-						name: "Superfly", 
-						identifier: "12349")
-
-Dog.create!(
-						name: "Troy", 
-						identifier: "12350")
-Dog.create!(
-						name: "Jack", 
-						identifier: "12351")
-Dog.create!(
-						name: "Chloe", 
-						identifier: "12352")
-Dog.create!(
-						name: "Magnus", 
-						identifier: "12353")
-Dog.create!(
-						name: "Bacon", 
-						identifier: "12354")
-
-10.times do 
-	first_name = Faker::Name.first_name
-	User.create!(
-							first_name: first_name,
-							last_name: Faker::Name.last_name,
-							email: first_name + '@gmail.com',
-							address_1: Faker::Address.street_address,
-							address_2: Faker::Address.secondary_address,
-							city:  Faker::Address.city,
-							state: Faker::Address.state,
-							zip: Faker::Address.zip_code,
-							phone: Faker::PhoneNumber.phone_number,
-							spouse_name: Faker::Name.first_name,
-							spouse_occupation: Faker::Pokemon.name,
-							kids: [true, false].sample,
-							dwelling_type: ['House', 'Apartment', 'Condo', 'Other'].sample,
-							dwelling_owned: [true, false].sample,
-							landlord_permission: [true, false].sample,
-							landlord_name: ['Bob', 'Maria', 'Anton'].sample,
-							landlord_phone: Faker::PhoneNumber.phone_number,
-							password_digest: "password" 
-							)
-end
+# 5.times do 
+# 	first_name = Faker::Name.first_name
+# 	User.create!(
+# 							first_name: first_name,
+# 							last_name: Faker::Name.last_name,
+# 							email: first_name + '@gmail.com',
+# 							address_1: Faker::Address.street_address,
+# 							address_2: Faker::Address.secondary_address,
+# 							city:  Faker::Address.city,
+# 							state: Faker::Address.state,
+# 							zip: Faker::Address.zip_code,
+# 							phone: Faker::PhoneNumber.phone_number,
+# 							spouse_name: Faker::Name.first_name,
+# 							spouse_occupation: Faker::Pokemon.name,
+# 							kids: [true, false].sample,
+# 							dwelling_type: ['House', 'Apartment', 'Condo', 'Other'].sample,
+# 							dwelling_owned: [true, false].sample,
+# 							landlord_permission: [true, false].sample,
+# 							landlord_name: ['Bob', 'Maria', 'Anton'].sample,
+# 							landlord_phone: Faker::PhoneNumber.phone_number,
+# 							password_digest: "password" 
+# 							)
+# end
 
 # 10.times do
 # 	Application.create!(
