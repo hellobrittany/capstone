@@ -79,11 +79,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
       newLifestyleInfo: {},
       newOwnershipHistory: {},
       newOwnershipProfile: {},
-      newDwellingInfo: {}
+      newDwellingInfo: {},
+      scene: ""
       },
     
 
     methods: {
+      changeScene: function (currentScene) {
+        this.scene = currentScene;
+      },
       addOwnedPet: function() {
         this.errors = [];
         var params = {
@@ -140,7 +144,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
             error: function(e) {
                                 console.log(e.message);
                                 }
+
           });
+
+          toggleLifestyleForm(this);
+        
+      
       },  
 
       updateOwnershipHistory: function(newOwnershipHistory) {
@@ -242,6 +251,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                               }
         });      
       },
+
+
     }, 
 
   });

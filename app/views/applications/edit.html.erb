@@ -5,8 +5,9 @@
 
 
 
-<h3>Lifestyle Information</h3>
-  <div class="container" id="LifestyleInfo" >
+<h3 v-on:click="changeScene('lifestyle')">Lifestyle Information</h3>
+
+<div class="container" id="LifestyleInfo" v-if="scene === 'lifestyle'">
 
   <form action="" class="lifestyle-info">
     <br>
@@ -65,21 +66,21 @@
     <br>
     What type of food will you feed the dog? <input type="text" v-model="typeOfDogFood">
     <br>
-    <input type="submit" value="Submit" v-on:click="updateLifestyleInfo(newLifestyleInfo)">
+    <input type="submit" value="Submit" v-on:click="updateLifestyleInfo(newLifestyleInfo)" >
   </form>
 </div>
 
-  <h3>Ownership History</h3>
-  <form action="" class="ownership-history">
+  <h3 v-on:click="changeScene('ownership history')">Ownership History</h3>
+  <form action="" class="ownership-history" v-if="scene === 'ownership history'">
     How many pets do you currently have? <input type="text" v-model="numberOfCurrentPets">
     <br>
     Have you ever allowed your pets to breed? <input type="checkbox" v-model="allowedBreeding">
     <input type="submit" value="Submit" v-on:click="updateOwnershipHistory(newOwnershipHistory)">
   </form>
 
-  <h3>Add a Pet</h3>
+  <h3 v-on:click="changeScene('pets')">Add a Pet</h3>
 
-  <form class="owned-pet">
+  <form class="owned-pet" v-if="scene === 'pets'">
     <input type="text" v-model="ownershipHistoryId" value="hidden">
     Species: <input type="text" v-model="species">
     <br>
@@ -94,9 +95,9 @@
     <input type="submit" value="Add Pet">
   </form>
 
-  <h3>Ownership Profile</h3>
+  <h3 v-on:click="changeScene('ownership profile')">Ownership Profile</h3>
 
-  <form class="ownership-profile">
+  <form class="ownership-profile" v-if="scene === 'ownership profile'">
     Who will groom your dog?  <input type="text" v-model="whoGrooms">
     <br>
     Do you have a current, regular vet? <input type="checkbox" v-model="regularVet">
@@ -148,9 +149,9 @@
     <input type="submit" value="Submit" v-on:click="updateOwnershipProfile(newOwnershipProfile)">
   </form>
 
-  <h3>Dwelling Information</h3>
+  <h3 v-on:click="changeScene('dwelling')">Dwelling Information</h3>
 
-  <form class="dwelling-info">
+  <form class="dwelling-info" v-if="scene === 'dwelling'">
     Does your Home have a fenced yard? <input type="checkbox" v-model="hasFencing">
     <br>
     What is the highest height of your fence? <input type="text" v-model="fenceHighestHeight">
