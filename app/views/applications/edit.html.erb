@@ -13,19 +13,33 @@
 
 
 
-
 <div id="app">
+
+<div class="progress-wrapper">
+    <div class="total-bar">
+    </div> 
+
+    <div class="tracker-bar">  
+    </div>
+
+    <ul class="steps-wrapper">
+        <li class="step pb-complete"></li>
+        <li v-bind:class="{ 'pb-complete': pbLifestyleInfo }" class="step" v-on:click="changeScene('lifestyle')"></li>
+        <li v-bind:class="{ 'pb-complete': pbOwnershipHistory }" class="step" v-on:click="changeScene('ownership history')"></li>
+        <li v-bind:class="{ 'pb-complete': pbPets }" class="step" v-on:click="changeScene('pets')"></li>
+        <li v-bind:class="{ 'pb-complete': pbOwnershipProfile }" class="step" v-on:click="changeScene('ownership profile')"></li>
+        <li v-bind:class="{ 'pb-complete': pbDwellingInfo }" class="step" v-on:click="changeScene('dwelling')"></li>
+    </ul>
+    
+</div>
 <div id="application-id" class="hidden"><%= @application.id %></div>
-
-
-
 
 
 <h3 v-on:click="changeScene('lifestyle')">Lifestyle Information</h3>
 
 <div class="container" id="LifestyleInfo" v-if="scene === 'lifestyle'">
 
-  <form action="" class="lifestyle-info">
+  <div class="lifestyle-info">
     <br>
     <h4>What are your primary reasons for wanting a dog? (Check all that apply)</h4>
     <div class="checkbox">
@@ -45,8 +59,10 @@
 
       <div class="checkbox">
         <label>
-          <input type="checkbox" value="" v-model="allergies">
-          <h4>Does anyone in your household have allergies?</h4>
+            <h4>Does anyone in your household have allergies?</h4>
+          <input type="checkbox" value="true" v-model="allergies"> Yes
+          <br>
+          <input type="checkbox" value="false" v-model="allergies"> No
         </label>
       </div>
     <div class="form-group">
@@ -117,92 +133,153 @@
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="typeOfDogFood">
     </div>
     <!-- What type of food will you feed the dog? <input type="text" v-model="typeOfDogFood"> -->
-     <button type="submit" class="btn btn-default" v-on:click="updateLifestyleInfo(newLifestyleInfo)">Submit</button>
+     <button class="btn btn-default" v-on:click="updateLifestyleInfo(newLifestyleInfo)">Submit</button>
     <!-- <input type="submit" value="Submit" v-on:click="updateLifestyleInfo(newLifestyleInfo)" > -->
-  </form>
+  </div>
 </div>
 
   <h3 v-on:click="changeScene('ownership history')">Ownership History</h3>
-  <form action="" class="ownership-history" v-if="scene === 'ownership history'">
-    How many pets do you currently have? <input type="text" v-model="numberOfCurrentPets">
-    Have you ever allowed your pets to breed? <input type="checkbox" v-model="allowedBreeding">
-    <input type="submit" value="Submit" v-on:click="updateOwnershipHistory(newOwnershipHistory)">
-  </form>
-
+  <div class="container">
+      <div class="ownership-history" v-if="scene === 'ownership history'">
+        <div class="form-group">
+          <label><h4>How many pets do you currently have?</h4></label>
+          <input type="text" class="form-control" id="exampleInputEmail1" v-model="numberOfCurrentPets">
+        </div>
+        <!-- How many pets do you currently have? <input type="text" v-model="numberOfCurrentPets"> -->
+        <br>
+        <div class="checkbox">
+          <label>
+            <h4>Have you ever allowed your pets to breed? </h4>
+             <input type="checkbox" v-model="allowedBreeding" value="true">Yes
+            <br>
+            <input type="checkbox" v-model="allowedBreeding" value="false">No
+          </label>
+        </div>
+        <!-- Have you ever allowed your pets to breed? <input type="checkbox" v-model="allowedBreeding"> -->
+        <button class="btn btn-default" v-on:click="updateOwnershipHistory(newOwnershipHistory)">Submit</button>
+        <!-- <input type="submit" value="Submit" v-on:click="updateOwnershipHistory(newOwnershipHistory)"> -->
+      </div>
+  </div>
   <h3 v-on:click="changeScene('pets')">Add a Pet</h3>
-
-  <form class="owned-pet" v-if="scene === 'pets'">
-    <input type="text" v-model="ownershipHistoryId" value="hidden">
-    Species: <input type="text" v-model="species">
-    <br>
-    Breed: <input type="text" v-model="breed">
-    <br>
-    Do you currently own this pet? <input type="checkbox" v-model="current">
-    <br>
-    How long did you own this pet? <input type="checkbox" v-model="lengthOfOwnership">
-    <br>
-    If this pet is no longer with you, explain why. <input type="text" v-model="explanation">
-    <br>
-    <input type="submit" value="Add Pet">
-  </form>
+  <div class="container" v-if="scene === 'pets'">
+      <div class="owned-pet" >
+        <div class="form-group">
+          <label><h4>Species</h4></label>
+          <input type="text" class="form-control" id="exampleInputEmail1" v-model="species">
+        </div>
+        <div class="form-group">
+          <label><h4>Breed</h4></label>
+          <input type="text" class="form-control" id="exampleInputEmail1" v-model="breed">
+        </div>
+        <!-- <input type="text" v-model="ownershipHistoryId" value="hidden">
+        Species: <input type="text" v-model="species">
+        <br>
+        Breed: <input type="text" v-model="breed"> -->
+        <br>
+        <div class="checkbox">
+          <label>
+            <h4>Do you currently own this pet? </h4>
+             <input type="checkbox" v-model="current" value="true">Yes
+            <br>
+            <input type="checkbox" v-model="current" value="false">No
+          </label>
+        </div>
+         <div class="form-group">
+          <label><h4>How long did you own this pet?</h4></label>
+          <input type="text" class="form-control" id="exampleInputEmail1" v-model="lengthOfOwnership">
+        </div>
+        <!-- Do you currently own this pet? <input type="checkbox" v-model="current"> -->
+        <br>
+        <!-- How long did you own this pet? <input type="checkbox" v-model="lengthOfOwnership"> -->
+         <!-- <input type="text" v-model="explanation"> -->
+        <div class="form-group">
+          <label><h4>If this pet is no longer with you, explain why.</h4></label>
+          <input type="text" class="form-control" id="exampleInputEmail1" v-model="explanation">
+        </div>
+        <br>
+        <button class="btn btn-default" v-on:click="addOwnedPet(newOwnedPet)">Add Pet</button>
+        <!-- <input type="submit" value="Add Pet"> -->
+      </div>
+  </div>  
 
   <h3 v-on:click="changeScene('ownership profile')">Ownership Profile</h3>
-
-  <form class="ownership-profile" v-if="scene === 'ownership profile'">
-    Who will groom your dog?  <input type="text" v-model="whoGrooms">
-    <br>
-    Do you have a current, regular vet? <input type="checkbox" v-model="regularVet">
-    <br>
-    Check the box if your dog will wear a collar. <input type="checkbox" v-model="wearsCollar">
-    <br>
-    What is your level of experience owning a dog?  <input type="text" v-model="experienceLevel">
-    <br>
-    How would you discipline your dog if he or she misbehaved?  <input type="text" v-model="disciplineStyle">
-    <br>
-    How would you train this dog? 
-    Obedience Class <input type="checkbox" v-model="trainingObedienceClass">
-    Hit with Newspaper <input type="checkbox" v-model="trainingHit">
-    Verbal Commands <input type="checkbox" v-model="trainingVerbal">
-    Clicker/Hand Signals <input type="checkbox" v-model="trainingClicker">
-    Other <input type="checkbox" v-model="trainingOther">
-    <br>
-    How do you normally walk your dog? <input type="text" v-model="dogWalkStyle">
-    <br>
-    Are you willing to live with hair on furniture, stains on your rugs, a warm body in your bed, and an animal that might be destructive at times? <input type="checkbox" v-model="ready">
-    <br>
-    Pets are an investment of your time and money. Can you afford to provide medical care, grooming, proper diet, shelter and exercise for your new pet? <input type="checkbox" v-model="invested">
-    <br>
-    What would happen to your pets if you moved?
-    <br>
-    Locally? <input type="text" v-model="moveLocallyPlan">
-    Out of State? <input type="text" v-model="moveFarPlan">
-    Internationally? <input type="text" v-model="moveInternationallyPlan">
-    <br>
-    Which of the following reasons might prompt you to give up your dog? (Check all that apply) 
-    <br>
-    Excessive Barking <input type="checkbox" v-model="guExcessiveBarking">
-    Biting <input type="checkbox" v-model="guBiting">
-    Digging <input type="checkbox" v-model="guDigging">
-    Moving <input type="checkbox" v-model="guMoving">
-    Divorce <input type="checkbox" v-model="guDivorce">
-    Poor Watchdog <input type="checkbox" v-model="guPoorWatchdog">
-    Distructive Chewing <input type="checkbox" v-model="guDistructive">
-    Financial Problems <input type="checkbox" v-model="guFinancial">
-    Excessive Accidents Indoors <input type="checkbox" v-model="guAccidents">
-    Growling at Guests <input type="checkbox" v-model="guGrowls">
-    Excessive Vet Bills <input type="checkbox" v-model="guVetBills">
-    Shedding <input type="checkbox" v-model="guShedding">
-    Allergies <input type="checkbox" v-model="guAllergies">
-    Spouse/Partner does not like the Dog <input type="checkbox" v-model="guNewPartner">
-    Aggressive <input type="checkbox" v-model="guAggressive">
-    Other <input type="checkbox" v-model="guOther">
-    <br>
-    <input type="submit" value="Submit" v-on:click="updateOwnershipProfile(newOwnershipProfile)">
-  </form>
+  <div class="container" v-if="scene === 'ownership profile'">
+      <div class="ownership-profile">
+        <div class="form-group">
+          <label><h4>Who will groom your dog?</h4></label>
+          <input type="text" class="form-control" id="exampleInputEmail1" v-model="whoGrooms">
+        </div>
+        <!-- Who will groom your dog?  <input type="text" v-model="whoGrooms"> -->
+        <div class="checkbox">
+          <label>
+            <h4>Do you have a current, regular vet?</h4>
+             <input type="checkbox" v-model="regularVet" value="true">Yes
+            <br>
+            <input type="checkbox" v-model="regularVet" value="false">No
+          </label>
+        </div>
+       <!--  Do you have a current, regular vet? <input type="checkbox" v-model="regularVet"> -->
+        <br>
+        Check the box if your dog will wear a collar. <input type="checkbox" v-model="wearsCollar">
+        <br>
+        What is your level of experience owning a dog?  <input type="text" v-model="experienceLevel">
+        <br>
+        How would you discipline your dog if he or she misbehaved?  <input type="text" v-model="disciplineStyle">
+        <br>
+        <div class="checkbox">
+          <label>
+            <h4>Have you ever allowed your pets to breed? </h4>
+             <input type="checkbox" v-model="allowedBreeding" value="true">Yes
+            <br>
+            <input type="checkbox" v-model="allowedBreeding" value="false">No
+          </label>
+        </div>
+        How would you train this dog? 
+        Obedience Class <input type="checkbox" v-model="trainingObedienceClass">
+        Hit with Newspaper <input type="checkbox" v-model="trainingHit">
+        Verbal Commands <input type="checkbox" v-model="trainingVerbal">
+        Clicker/Hand Signals <input type="checkbox" v-model="trainingClicker">
+        Other <input type="checkbox" v-model="trainingOther">
+        <br>
+        How do you normally walk your dog? <input type="text" v-model="dogWalkStyle">
+        <br>
+        Are you willing to live with hair on furniture, stains on your rugs, a warm body in your bed, and an animal that might be destructive at times? <input type="checkbox" v-model="ready">
+        <br>
+        Pets are an investment of your time and money. Can you afford to provide medical care, grooming, proper diet, shelter and exercise for your new pet? <input type="checkbox" v-model="invested">
+        <br>
+        What would happen to your pets if you moved?
+        <br>
+        Locally? <input type="text" v-model="moveLocallyPlan">
+        Out of State? <input type="text" v-model="moveFarPlan">
+        Internationally? <input type="text" v-model="moveInternationallyPlan">
+        <br>
+        Which of the following reasons might prompt you to give up your dog? (Check all that apply) 
+        <br>
+        Excessive Barking <input type="checkbox" v-model="guExcessiveBarking">
+        Biting <input type="checkbox" v-model="guBiting">
+        Digging <input type="checkbox" v-model="guDigging">
+        Moving <input type="checkbox" v-model="guMoving">
+        Divorce <input type="checkbox" v-model="guDivorce">
+        Poor Watchdog <input type="checkbox" v-model="guPoorWatchdog">
+        Distructive Chewing <input type="checkbox" v-model="guDistructive">
+        Financial Problems <input type="checkbox" v-model="guFinancial">
+        Excessive Accidents Indoors <input type="checkbox" v-model="guAccidents">
+        Growling at Guests <input type="checkbox" v-model="guGrowls">
+        Excessive Vet Bills <input type="checkbox" v-model="guVetBills">
+        Shedding <input type="checkbox" v-model="guShedding">
+        Allergies <input type="checkbox" v-model="guAllergies">
+        Spouse/Partner does not like the Dog <input type="checkbox" v-model="guNewPartner">
+        Aggressive <input type="checkbox" v-model="guAggressive">
+        Other <input type="checkbox" v-model="guOther">
+        <br>
+        <button class="btn btn-default" v-on:click="updateOwnershipProfile(newOwnershipProfile)">Submit</button>
+        <!-- <input type="submit" value="Submit" v-on:click="updateOwnershipProfile(newOwnershipProfile)"> -->
+      </div>
+  </div>  
 
   <h3 v-on:click="changeScene('dwelling')">Dwelling Information</h3>
 
-  <form class="dwelling-info" v-if="scene === 'dwelling'">
+  <div class="dwelling-info" v-if="scene === 'dwelling'">
     Does your Home have a fenced yard? <input type="checkbox" v-model="hasFencing">
     <br>
     What is the highest height of your fence? <input type="text" v-model="fenceHighestHeight">
@@ -222,10 +299,13 @@
     Other <input type="radio" v-model="whoHasYardAccess">
     N/A <input type="radio" v-model="whoHasYardAccess">
     <br>
-    <input type="submit" value="Submit" v-on:click="updateDwellingInfo(newDwellingInfo)">
-  </form>
-
-  
-
+    <button class="btn btn-default" v-on:click="updateDwellingInfo(newDwellingInfo)">Submit</button>
+   <!--  <input type="submit" value="Submit" v-on:click="updateDwellingInfo(newDwellingInfo)"> -->
+   
+  </div>
 </div>
+
+
+
+
 

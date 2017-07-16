@@ -80,14 +80,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
       newOwnershipHistory: {},
       newOwnershipProfile: {},
       newDwellingInfo: {},
-      scene: ""
+      scene: "",
+
+
+      // prgress bar
+      pbLifestyleInfo: false,
+      pbDwellingInfo: false,
+      pbOwnershipProfile: false,
+      pbOwnershipHistory: false,
+      pbPets: false
       },
     
 
-    methods: {
+    methods: { 
+      log: function() {
+        console.log("working");
+      },
+      // addClassLifestyle: function(element) {
+      //   element.addClass("lifestyle");
+      // },
       changeScene: function (currentScene) {
         this.scene = currentScene;
+        this.log();
       },
+
       addOwnedPet: function() {
         this.errors = [];
         var params = {
@@ -98,6 +114,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
                        "length_of_ownership": this.lengthOfOwnership, 
                        "explanation": this.explanation
                       };
+
+        var tempThis = this;     
+               
         $.post('/api/v1/owned_pets.json', params, function(newOwnedPet) {
           this.ownedPets.push(newOwnedPet);
           this.species = '';
@@ -106,9 +125,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
           this.lengthOfOwnership = '';
           this.explanation = '';
 
+
         }.bind(this)).fail( function(response) {
           this.errors = response.responseJSON.errors;
         }.bind(this));
+
+        tempThis.pbPets = true;
       },
 
       updateLifestyleInfo: function(newLifestyleInfo) {
@@ -131,15 +153,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
                       "type_of_dog_food": this.typeOfDogFood,
                       "where_dog_stay": this.whereDogStay
                       };
+          var tempThis = this;
         
           $.ajax({
-            url: '/api/v1/applications/' + applicationId + '/lifestyle_info/1.json', 
+            url: '/api/v1/applications/' + applicationId + '/lifestyle_info.json', 
             type: 'PATCH', 
             dataType: 'json', 
             data: params, 
 
             success: function(data) {
                                     console.log(data);
+                                    tempThis.pbLifestyleInfo = true;
                                     },
             error: function(e) {
                                 console.log(e.message);
@@ -147,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
           });
 
-          toggleLifestyleForm(this);
+         
         
       
       },  
@@ -159,13 +183,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
                       "number_of_current_pets": this.numberOfCurrentPets,
                       "allowed_breeding": this.allowedBreeding 
                       };
+
+        var tempThis = this;
+
         $.ajax({
-          url: '/api/v1/applications/' + applicationId + '/ownership_history/1.json', 
+          url: '/api/v1/applications/' + applicationId + '/ownership_history.json', 
           type: 'PATCH', 
           dataType: 'json', 
           data: params, 
           success: function(data) {
                                   console.log(data);
+                                  tempThis.pbOwnershipHistory = true;
                                   },
           error: function(e) {
                               console.log(e.message);
@@ -211,13 +239,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
                       "gu_aggressive": this.guAggressive,
                       "gu_other": this.guOther
                       };
+
+        var tempThis = this;              
         $.ajax({
-          url: '/api/v1/applications/' + applicationId + '/ownership_profile/1.json', 
+          url: '/api/v1/applications/' + applicationId + '/ownership_profile.json', 
           type: 'PATCH', 
           dataType: 'json', 
           data: params, 
           success: function(data) {
                                   console.log(data);
+                                  tempThis.pbOwnershipProfile = true;
+
                                   },
           error: function(e) {
                               console.log(e.message);
@@ -238,23 +270,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
                       "who_has_yard_access": this.whoHasYardAccess
 
                       };
+        var tempThis = this;
+                      
         $.ajax({
-          url: '/api/v1/applications/' + applicationId + '/dwelling_info/1.json', 
+          url: '/api/v1/applications/' + applicationId + '/dwelling_info.json', 
           type: 'PATCH', 
           dataType: 'json', 
           data: params, 
           success: function(data) {
                                   console.log(data);
+                                  tempThis.pbDwellingInfo = true;
                                   },
           error: function(e) {
                               console.log(e.message);
                               }
         });      
       },
-
-
     }, 
-
   });
 });
 

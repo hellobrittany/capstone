@@ -10,13 +10,8 @@ class Api::V1::ApplicationsController < ApplicationController
 
   end
 
-  def update
-    # application = Application.find(params[:id])
-    # application.assign_attributes(
-    #                                 dog_id: params[:dog_id], 
-    #                                 user_id: current_user, 
-    #                                 status: params[:status]
-    #                               )
+  def update_lifestyle_info
+
     lifestyle_info = LifestyleInfo.find(params[:id])
     lifestyle_info.assign_attributes(
                                       allergies: params[:allergies], 
@@ -31,11 +26,18 @@ class Api::V1::ApplicationsController < ApplicationController
                                       hours_dog_left_alone: params[:hours_dog_left_alone], 
                                       where_dog_sleep: params[:where_dog_sleep], 
                                       outside_areas: params[:outside_areas], 
-                                      preferred_level_of_exercise: params[:preferred_level_of_exercise], 
+                                      preferred_level_of_exercise: params[:preferred_level_of_exercise].to_i, 
                                       type_of_dog_food: params[:type_of_dog_food]
                                     )
 
-    lifestyle_info.save!
+    if lifestyle_info.save!
+      render json: {message: "lifestyle_info updated"}
+    else
+      render json: {errors: lifestyle_info.errors.full_messages}
+    end
+  end
+
+  def update_ownership_history
 
     ownership_history = OwnershipHistory.find(params[:id])
     ownership_history.assign_attributes(
@@ -43,6 +45,12 @@ class Api::V1::ApplicationsController < ApplicationController
                                         allowed_breeding: params[:allowed_breeding],
                                         )
     ownership_history.save!
+    render json: {message: "ownership_history updated"}
+
+  end
+
+  def update_ownership_profile
+      
 
     ownership_profile = OwnershipProfile.find(params[:id])
     ownership_profile.assign_attributes( 
@@ -80,6 +88,11 @@ class Api::V1::ApplicationsController < ApplicationController
                                         gu_other: params[:gu_other]
                                         )
     ownership_profile.save!
+    render json: {message: "ownership_profile updated"}
+
+  end
+      
+  def update_dwelling_info
 
     dwelling_info = DwellingInfo.find(params[:id])
     dwelling_info.assign_attributes( 
@@ -92,11 +105,7 @@ class Api::V1::ApplicationsController < ApplicationController
                                     )
     dwelling_info.save!
 
-
-
-    # if application.save
-    #   flash[:success] = "Application updated!"
-    # end
+    render json: {message: "dwelling_info updated"}
 
   end
 

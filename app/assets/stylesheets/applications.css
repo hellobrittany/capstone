@@ -1,15 +1,92 @@
+
+ul {
+  position: relative; 
+  justify-content: space-between; 
+  display: flex;
+  width: 600px;
+}
+
+.step {
+  border-radius: 50%;
+  background-color: blue;
+  height: 30px;
+  position: relative;
+  width: 30px;
+  list-style-type: none;
+  z-index: 1;
+}
+.step:hover {
+    cursor:pointer;
+}
+
 .hidden {
   display: none;
 }
 
 .dog-container {
-  width: 250px;
-  display: inline-table;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px; 
+  flex-wrap: wrap;
+  justify-content: space-around; 
+  
+}
 
+.dog-well {
+  width: 250px;
+  flex-flow: row wrap;
+  align-items: center;
+ 
 }
 
 .dog-photo {
   border-radius: 50%;
   max-height: 200px;
   max-width: 200px;
+}
+
+.progress-wrapper {
+  position: relative;
+  margin: 20px;
+
+
+}
+.total-bar {
+  background-color: blue;
+  position: relative;
+  height: 10px;
+  width: 600px;
+}
+
+.tracker-bar {
+  background-color: pink;
+  position: relative;
+  height: 10px;
+  width: 100px;
+  top: -10px;
+}
+
+.steps-wrapper {
+  position: relative;
+  top: -30px;
+}
+
+.instagram-wrapper {
+  max-width: 500px;
+}
+
+.step.pb-complete {
+  border-radius: 50%;
+  background-color: pink;
+  height: 30px;
+  position: relative;
+  width: 30px;
+  list-style-type: none;
+  content: " ";
+}
+
+.step.lifestyle.ownership-history {
+  background-color: pink;
 }
