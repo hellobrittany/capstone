@@ -1,3 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="app">
 <div id="application-id" class="hidden"><%= @application.id %></div>
 
@@ -11,7 +27,7 @@
 
   <form action="" class="lifestyle-info">
     <br>
-    What are your primary reasons for wanting a dog? (Check all that apply)
+    <h4>What are your primary reasons for wanting a dog? (Check all that apply)</h4>
     <div class="checkbox">
       <label>
          <input type="checkbox" v-model="reasonCompanion">Companion for You
@@ -30,50 +46,85 @@
       <div class="checkbox">
         <label>
           <input type="checkbox" value="" v-model="allergies">
-          Does anyone in your household have allergies?
+          <h4>Does anyone in your household have allergies?</h4>
         </label>
       </div>
     <div class="form-group">
-      <label for="exampleInputEmail1">About how many hours per day would the dog be left alone?</label>
-      <input type="text" class="form-control" id="exampleInputEmail1">
+      <label><h4>About how many hours per day would the dog be left alone?</h4></label>
+      <input type="text" class="form-control" id="exampleInputEmail1" v-model="homeDuringDay">
     </div>
-    Is anyone home during the day? <input type="text" v-model="homeDuringDay">
+    <!-- Is anyone home during the day? <input type="text" v-model="homeDuringDay"> -->
     <br>
-    When would the dog be outside? <input type="text" v-model="whenOutside">
+    <div class="form-group">
+      <label><h4>When would the dog be outside?</h4></label>
+      <input type="text" class="form-control" id="exampleInputEmail1" v-model="whenOutside">
+    </div>
+    <!-- When would the dog be outside? <input type="text" v-model="whenOutside"> -->
     <br>
-    When would the dog be inside? <input type="text" v-model="whenInside">
+    <div class="form-group">
+      <label><h4>When would the dog be inside?</h4></label>
+      <input type="text" class="form-control" id="exampleInputEmail1" v-model="whenInside">
+    </div>
+    <!-- When would the dog be inside? <input type="text" v-model="whenInside"> -->
     <br>
-    About how many hours per day would the dog be left alone? <input type="text" v-model="hoursDogLeftAlone" >
+    <div class="form-group">
+      <label><h4>About how many hours per day would the dog be left alone?</h4></label>
+      <input type="text" class="form-control" id="exampleInputEmail1" v-model="hoursDogLeftAlone">
+    </div>
+    <!-- About how many hours per day would the dog be left alone? <input type="text" v-model="hoursDogLeftAlone" > -->
     <br>
-    Where would the dog sleep at night? <input type="text" v-model="whereDogSleep">
+    <div class="form-group">
+      <label><h4>Where would the dog sleep at night?</h4></label>
+      <input type="text" class="form-control" id="exampleInputEmail1" v-model="whereDogSleep">
+    </div>
+    <!-- Where would the dog sleep at night? <input type="text" v-model="whereDogSleep"> -->
     <br>
-    What outside area is available to the dog?
-    Fenced Yard <input type="radio" v-model="outsideAreas">  
-    Enclosed Patio <input type="radio" v-model="outsideAreas">  
-    Garage <input type="radio" v-model="outsideAreas">  
-    Balcony <input type="radio" v-model="outsideAreas">  
-    Dog House <input type="radio" v-model="outsideAreas">  
-    Other <input type="radio" v-model="outsideAreas">  
-    None <input type="radio" v-model="outsideAreas">  
+    
+    <h4>What outside area is available to the dog?</h4>
+    <input type="radio" v-model="outsideAreas" value="1">  Fenced Yard   
     <br>
-    What is your preferred level of exercise with a dog? 
-    Couch Potato  <input type="radio" v-model="preferredLevelOfExercise">
-    Short Walks  <input type="radio" v-model="preferredLevelOfExercise">
-    Vigorous Walks  <input type="radio" v-model="preferredLevelOfExercise">
-    Hike/Jog Regularly  <input type="radio" v-model="preferredLevelOfExercise">
+    <input type="radio" v-model="outsideAreas" value="2">  Enclosed Patio   
     <br>
-    Where, specifically, will the dog stay when he/she is home alone? <input type="text" v-model="whereDogStay"> 
+    <input type="radio" v-model="outsideAreas" value="3">  Garage    
     <br>
-    What type of food will you feed the dog? <input type="text" v-model="typeOfDogFood">
+    <input type="radio" v-model="outsideAreas" value="4">  Balcony    
     <br>
-    <input type="submit" value="Submit" v-on:click="updateLifestyleInfo(newLifestyleInfo)" >
+    <input type="radio" v-model="outsideAreas" value="5">  Dog House  
+    <br>  
+    <input type="radio" v-model="outsideAreas" value="6">  Other  
+    <br> 
+    <input type="radio" v-model="outsideAreas" value="7">  None   
+    <br>
+    <br>
+    <h4>What is your preferred level of exercise with a dog?</h4>
+    <br>
+    <input type="radio" v-model="preferredLevelOfExercise" value="1">  Couch Potato    
+    <br>
+    <input type="radio" v-model="preferredLevelOfExercise" value="2">  Short Walks  
+    <br>
+    <input type="radio" v-model="preferredLevelOfExercise" value="3">  Vigorous Walks  
+    <br>
+    <input type="radio" v-model="preferredLevelOfExercise" value="4">  Hike/Jog Regularly  
+    <br>
+    <div class="form-group">
+    <br>
+      <label><h4>Where, specifically, will the dog stay when he/she is home alone?</h4></label>
+      <input type="text" class="form-control" id="exampleInputEmail1" v-model="whereDogStay">
+    </div>
+    <!-- Where, specifically, will the dog stay when he/she is home alone? <input type="text" v-model="whereDogStay">  -->
+    <div class="form-group">
+      <label><h4>What type of food will you feed the dog?</h4></label>
+      <input type="text" class="form-control" id="exampleInputEmail1" v-model="typeOfDogFood">
+    </div>
+    <!-- What type of food will you feed the dog? <input type="text" v-model="typeOfDogFood"> -->
+     <button type="submit" class="btn btn-default" v-on:click="updateLifestyleInfo(newLifestyleInfo)">Submit</button>
+    <!-- <input type="submit" value="Submit" v-on:click="updateLifestyleInfo(newLifestyleInfo)" > -->
   </form>
 </div>
 
   <h3 v-on:click="changeScene('ownership history')">Ownership History</h3>
   <form action="" class="ownership-history" v-if="scene === 'ownership history'">
     How many pets do you currently have? <input type="text" v-model="numberOfCurrentPets">
-    <br>
     Have you ever allowed your pets to breed? <input type="checkbox" v-model="allowedBreeding">
     <input type="submit" value="Submit" v-on:click="updateOwnershipHistory(newOwnershipHistory)">
   </form>
