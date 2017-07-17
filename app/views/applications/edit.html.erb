@@ -7,6 +7,8 @@
 
 <div id="app" class="col-xs-10 col-sm-offset-1">
 
+
+<!-- progress bar -->
 <div class="progress-wrapper">
     <div class="total-bar">
     </div> 
@@ -24,9 +26,12 @@
     </ul>
     
 </div>
+<!-- progress bar end -->
+
+<!-- passing application id to ajax calls -->
 <div id="application-id" class="hidden"><%= @application.id %></div>
 
-
+<!-- LIFESTYLE INFO -->
 <h3 v-on:click="changeScene('lifestyle')">Lifestyle Information</h3>
 
 <div class="container" id="LifestyleInfo" v-if="scene === 'lifestyle'">
@@ -66,27 +71,22 @@
       <label><h4>About how many hours per day would the dog be left alone?</h4></label>
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="homeDuringDay">
     </div>
-    <!-- Is anyone home during the day? <input type="text" v-model="homeDuringDay"> -->
     <div class="form-group">
       <label><h4>When would the dog be outside?</h4></label>
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="whenOutside">
     </div>
-    <!-- When would the dog be outside? <input type="text" v-model="whenOutside"> -->
     <div class="form-group">
       <label><h4>When would the dog be inside?</h4></label>
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="whenInside">
     </div>
-    <!-- When would the dog be inside? <input type="text" v-model="whenInside"> -->
     <div class="form-group">
       <label><h4>About how many hours per day would the dog be left alone?</h4></label>
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="hoursDogLeftAlone">
     </div>
-    <!-- About how many hours per day would the dog be left alone? <input type="text" v-model="hoursDogLeftAlone" > -->
     <div class="form-group">
       <label><h4>Where would the dog sleep at night?</h4></label>
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="whereDogSleep">
     </div>
-    <!-- Where would the dog sleep at night? <input type="text" v-model="whereDogSleep"> -->
     <br>
     
     <h4>What outside area is available to the dog?</h4>
@@ -120,16 +120,35 @@
       <label><h4>Where, specifically, will the dog stay when he/she is home alone?</h4></label>
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="whereDogStay">
     </div>
-    <!-- Where, specifically, will the dog stay when he/she is home alone? <input type="text" v-model="whereDogStay">  -->
     <div class="form-group">
       <label><h4>What type of food will you feed the dog?</h4></label>
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="typeOfDogFood">
     </div>
-    <!-- What type of food will you feed the dog? <input type="text" v-model="typeOfDogFood"> -->
-     <button class="btn btn-lg btn-default" v-on:click="updateLifestyleInfo(newLifestyleInfo)">Submit</button>
-    <!-- <input type="submit" value="Submit" v-on:click="updateLifestyleInfo(newLifestyleInfo)" > -->
+    <button class="btn btn-lg btn-default" v-on:click="updateLifestyleInfo(newLifestyleInfo)">Submit</button>
   </div>
 </div>
+
+<!-- LIFESTYLE INFO END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- OWNERSHIP HISTORY -->
 
   <h3 v-on:click="changeScene('ownership history')">Ownership History</h3>
   
@@ -138,7 +157,6 @@
           <label><h4>How many pets do you currently have?</h4></label>
           <input type="text" class="form-control" id="exampleInputEmail1" v-model="numberOfCurrentPets">
         </div>
-        <!-- How many pets do you currently have? <input type="text" v-model="numberOfCurrentPets"> -->
         <br>
         <div class="checkbox">
           <label>
@@ -148,10 +166,16 @@
             <input type="checkbox" v-model="allowedBreeding" value="false">No
           </label>
         </div>
-        <!-- Have you ever allowed your pets to breed? <input type="checkbox" v-model="allowedBreeding"> -->
         <button class="btn btn-lg btn-default" v-on:click="updateOwnershipHistory(newOwnershipHistory)">Submit</button>
-        <!-- <input type="submit" value="Submit" v-on:click="updateOwnershipHistory(newOwnershipHistory)"> -->
       </div>
+
+
+<!-- OWNERSHIP HISTORY END -->
+
+
+
+
+<!-- ADD OWNED PETS -->
   
   <h3 v-on:click="changeScene('pets')">Add a Pet</h3>
   <div class="container" v-if="scene === 'pets'">
@@ -164,10 +188,6 @@
           <label><h4>Breed</h4></label>
           <input type="text" class="form-control" id="exampleInputEmail1" v-model="breed">
         </div>
-        <!-- <input type="text" v-model="ownershipHistoryId" value="hidden">
-        Species: <input type="text" v-model="species">
-        <br>
-        Breed: <input type="text" v-model="breed"> -->
         <br>
         <div class="checkbox">
           <label>
@@ -181,19 +201,24 @@
           <label><h4>How long did you own this pet?</h4></label>
           <input type="text" class="form-control" id="exampleInputEmail1" v-model="lengthOfOwnership">
         </div>
-        <!-- Do you currently own this pet? <input type="checkbox" v-model="current"> -->
         <br>
-        <!-- How long did you own this pet? <input type="checkbox" v-model="lengthOfOwnership"> -->
-         <!-- <input type="text" v-model="explanation"> -->
         <div class="form-group">
           <label><h4>If this pet is no longer with you, explain why.</h4></label>
           <input type="text" class="form-control" id="exampleInputEmail1" v-model="explanation">
         </div>
         <br>
         <button class="btn btn-default" v-on:click="addOwnedPet(newOwnedPet)">Add Pet</button>
-        <!-- <input type="submit" value="Add Pet"> -->
       </div>
   </div>  
+
+  <!-- OWNED PETS END  -->
+
+
+
+
+
+
+  <!-- OWNERSHIP PROFILE -->
 
   <h3 v-on:click="changeScene('ownership profile')">Ownership Profile</h3>
   <div class="container" v-if="scene === 'ownership profile'">
@@ -202,7 +227,6 @@
           <label><h4>Who will groom your dog?</h4></label>
           <input type="text" class="form-control" id="exampleInputEmail1" v-model="whoGrooms">
         </div>
-        <!-- Who will groom your dog?  <input type="text" v-model="whoGrooms"> -->
         <div class="checkbox">
           <label>
             <h4>Do you have a current, regular vet?</h4>
@@ -211,20 +235,27 @@
             <input type="checkbox" v-model="regularVet" value="false">No
           </label>
         </div>
-       <!--  Do you have a current, regular vet? <input type="checkbox" v-model="regularVet"> -->
         <br>
         Check the box if your dog will wear a collar. <input type="checkbox" v-model="wearsCollar">
         <br>
-        What is your level of experience owning a dog?  <input type="text" v-model="experienceLevel">
+        <div class="form-group">
+          <label><h4>What is your level of experience owning a dog?</h4></label>
+          <input type="text" class="form-control" id="exampleInputEmail1" v-model="experienceLevel">
+        </div>
         <br>
-        How would you discipline your dog if he or she misbehaved?  <input type="text" v-model="disciplineStyle">
+        <div class="form-group">
+          <label><h4>How would you discipline your dog if he or she misbehaved? </h4></label>
+          <input type="text" class="form-control" id="exampleInputEmail1" v-model="disciplineStyle">
+        </div>
         <br>
         <div class="checkbox">
           <label>
-            <h4>Have you ever allowed your pets to breed? </h4>
-             <input type="checkbox" v-model="allowedBreeding" value="true">Yes
-            <br>
-            <input type="checkbox" v-model="allowedBreeding" value="false">No
+            <h4>How would you train this dog? </h4>
+             <input type="checkbox" v-model="trainingObedienceClass">  Obedience Class 
+             <input type="checkbox" v-model="trainingHit">  Hit with Newspaper 
+             <input type="checkbox" v-model="trainingVerbal">  Verbal Commands 
+             <input type="checkbox" v-model="trainingClicker">  Clicker/Hand Signals 
+             <input type="checkbox" v-model="trainingOther">  Other 
           </label>
         </div>
         How would you train this dog? 
@@ -270,6 +301,21 @@
       </div>
   </div>  
 
+  <!-- OWNERSHIP PROFILE END  -->
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- DWELLING INFO -->
+
   <h3 v-on:click="changeScene('dwelling')">Dwelling Information</h3>
 
   <div class="dwelling-info" v-if="scene === 'dwelling'">
@@ -296,6 +342,8 @@
    <!--  <input type="submit" value="Submit" v-on:click="updateDwellingInfo(newDwellingInfo)"> -->
 
   </div>
+
+  <!-- DWELLING INFO END -->
 </div>
 </div>
 

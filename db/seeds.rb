@@ -25,6 +25,56 @@
 
 
 
+# Dog.create!(
+#             name: "Deeds", 
+#             identifier: "456", 
+#             image_url: "https://image.ibb.co/c6hVPa/Screen_Shot_2017_07_17_at_10_27_36_AM.png"
+#             )
+
+# Dog.create!(
+#             name: "Enzo", 
+#             identifier: "457", 
+#             image_url: "https://image.ibb.co/d1GqPa/Screen_Shot_2017_07_17_at_10_26_11_AM.png"
+#             )
+
+# Dog.create!(
+#             name: "Frances", 
+#             identifier: "458", 
+#             image_url: "https://image.ibb.co/fn89Hv/Screen_Shot_2017_07_17_at_10_28_04_AM.png"
+#             )
+# Dog.create!(
+#             name: "Grim", 
+#             identifier: "459", 
+#             image_url: "https://image.ibb.co/ehPuja/Screen_Shot_2017_07_17_at_10_31_02_AM.png"
+#             )
+# Dog.create!(
+#             name: "Trotter", 
+#             identifier: "460", 
+#             image_url: "https://image.ibb.co/fo4icv/Screen_Shot_2017_07_17_at_10_37_48_AM.png"
+#             )
+# Dog.create!(
+#             name: "Todd", 
+#             identifier: "461", 
+#             image_url: "https://image.ibb.co/fHgJAF/Screen_Shot_2017_07_17_at_10_38_36_AM.png"
+#             )
+# Dog.create!(
+#             name: "Magnus", 
+#             identifier: "462", 
+#             image_url: "https://image.ibb.co/dr0Zja/Screen_Shot_2017_07_17_at_10_42_09_AM.png"
+#             )
+# Dog.create!(
+#             name: "Troy", 
+#             identifier: "463", 
+#             image_url: "https://image.ibb.co/etVZja/Screen_Shot_2017_07_17_at_10_39_38_AM.png"
+#             )
+# Dog.create!(
+#             name: "OddBall", 
+#             identifier: "463", 
+#             image_url: "https://image.ibb.co/iff0Pa/Screen_Shot_2017_07_17_at_10_44_06_AM.png"
+#             )
+
+
+
 # 5.times do 
 # 	first_name = Faker::Name.first_name
 # 	User.create!(
