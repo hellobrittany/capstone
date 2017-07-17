@@ -2372,8 +2372,8 @@ h5 + .separator {
 /*Default Button*/
 .btn-default {
   color: #ffffff;
-  background-color: #09afdf;
-  border-color: #0c9ec7;
+  background-color: #0e36cf !important;
+  border-color: #0e36cf !important;
 }
 
 .btn-default:hover,
@@ -2383,8 +2383,8 @@ h5 + .separator {
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
   color: #ffffff;
-  background-color: #0c9ec7;
-  border-color: #0c9ec7;
+  background-color: #fd7dac !important;
+  border-color: #fd7dac !important;
 }
 
 .btn-default.disabled,

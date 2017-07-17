@@ -1,3 +1,31 @@
+.btn-primary {
+  background-color: #0e36cf;
+  border-color: #0e36cf;
+}
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: #fd7dac;
+  border-color: #fd7dac;
+}
+
+.logo img {
+  max-width: 200px;
+}
+
+#app {
+  padding-bottom: 100px;
+}
+
+#app h3 {
+  border-bottom: 2px solid #ddd;
+  cursor: pointer;
+  padding-bottom: 15px;
+}
+
+#app .container {
+  width: 100%;
+  padding: 0 0 30px;
+}
 
 ul {
   position: relative; 
@@ -8,12 +36,13 @@ ul {
 
 .step {
   border-radius: 50%;
-  background-color: blue;
+  background-color: #0e36cf;
   height: 30px;
   position: relative;
   width: 30px;
   list-style-type: none;
   z-index: 1;
+  transition: background-color 0.2s linear;
 }
 .step:hover {
     cursor:pointer;
@@ -24,69 +53,78 @@ ul {
 }
 
 .dog-container {
-  width: 600px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 100px; 
+  align-items: center; 
   flex-wrap: wrap;
-  justify-content: space-around; 
   
 }
 
-.dog-well {
-  width: 250px;
-  flex-flow: row wrap;
-  align-items: center;
- 
+.well {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  width: calc(100%/3);
+  text-align: center;
 }
 
 .dog-photo {
   border-radius: 50%;
-  max-height: 200px;
-  max-width: 200px;
+  margin: 0 auto;
 }
 
 .progress-wrapper {
-  position: relative;
-  margin: 20px;
-
-
+  background: white;
+  padding: 30px 30px 0;
+  bottom: -20px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.15);
 }
 .total-bar {
-  background-color: blue;
+  background-color: #0e36cf;
   position: relative;
-  height: 10px;
-  width: 600px;
+  height: 8px;
+  width: 100%;
 }
 
 .tracker-bar {
-  background-color: pink;
+  background-color: #fd7dac;
   position: relative;
-  height: 10px;
-  width: 100px;
-  top: -10px;
+  height: 8px;
+  width: 10%;
+  top: -8px;
+  transition: width: 0.2s ease-out;
 }
 
 .steps-wrapper {
   position: relative;
-  top: -30px;
+  top: -27px;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  color: white;
+  line-height: 28px;
+  font-weight: bold;
 }
 
 .instagram-wrapper {
-  max-width: 500px;
+  max-width: 900px;
 }
 
 .step.pb-complete {
   border-radius: 50%;
-  background-color: pink;
+  background-color: #fd7dac;
   height: 30px;
   position: relative;
   width: 30px;
   list-style-type: none;
-  content: " ";
 }
-
-.step.lifestyle.ownership-history {
-  background-color: pink;
+.step:first-of-type {
+  margin-left: -15px;
+}
+.step:last-of-type {
+  margin-right: -15px;
 }

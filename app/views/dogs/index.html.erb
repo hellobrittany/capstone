@@ -1,14 +1,18 @@
-<h1>Available Dogs</h1>
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1">
+    <h1 class="text-center">Available Dogs</h1>
 
-
-<div class="dog-container">
-  <% @dogs.each do |dog| %>
-    <div class="well">
-      <img src=<%= dog.image_url %> alt="Dog" class="dog-photo">
-    	<%= form_tag '/applications', method: :post do %>
-    		<%= hidden_field_tag :dog_id, dog.id %>
-    		<%= submit_tag "#{dog.name}"  %> 
-    	<% end %> 
+    <div class="dog-container">
+      <% @dogs.each do |dog| %>
+        <div class="well">
+          <img src=<%= dog.image_url %> alt="Dog" class="dog-photo">
+          <h2><%= dog.name %></h2>
+        	<%= form_tag '/applications', method: :post do %>
+        		<%= hidden_field_tag :dog_id, dog.id %>
+        		<%= submit_tag "Apply Now", class: "btn btn-sm btn-primary"  %> 
+        	<% end %> 
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>

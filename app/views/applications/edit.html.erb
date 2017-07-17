@@ -1,19 +1,11 @@
 
+<div class="page-header text-center">
+  <h1>Fill out your application for <%= @application.dog.name %></h1>
+</div>
 
+<div class="row">
 
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="app">
+<div id="app" class="col-xs-10 col-sm-offset-1">
 
 <div class="progress-wrapper">
     <div class="total-bar">
@@ -23,12 +15,12 @@
     </div>
 
     <ul class="steps-wrapper">
-        <li class="step pb-complete"></li>
-        <li v-bind:class="{ 'pb-complete': pbLifestyleInfo }" class="step" v-on:click="changeScene('lifestyle')"></li>
-        <li v-bind:class="{ 'pb-complete': pbOwnershipHistory }" class="step" v-on:click="changeScene('ownership history')"></li>
-        <li v-bind:class="{ 'pb-complete': pbPets }" class="step" v-on:click="changeScene('pets')"></li>
-        <li v-bind:class="{ 'pb-complete': pbOwnershipProfile }" class="step" v-on:click="changeScene('ownership profile')"></li>
-        <li v-bind:class="{ 'pb-complete': pbDwellingInfo }" class="step" v-on:click="changeScene('dwelling')"></li>
+        <li class="step pb-complete">1</li>
+        <li v-bind:class="{ 'pb-complete': pbLifestyleInfo }" class="step" v-on:click="changeScene('lifestyle')">2</li>
+        <li v-bind:class="{ 'pb-complete': pbOwnershipHistory }" class="step" v-on:click="changeScene('ownership history')">3</li>
+        <li v-bind:class="{ 'pb-complete': pbPets }" class="step" v-on:click="changeScene('pets')">4</li>
+        <li v-bind:class="{ 'pb-complete': pbOwnershipProfile }" class="step" v-on:click="changeScene('ownership profile')">5</li>
+        <li v-bind:class="{ 'pb-complete': pbDwellingInfo }" class="step" v-on:click="changeScene('dwelling')">6</li>
     </ul>
     
 </div>
@@ -56,39 +48,40 @@
         <br>
       </label>
     </div>
+    <br>
 
-      <div class="checkbox">
+    <h4>Does anyone in your household have allergies?</h4>
+    <div class="checkbox">
         <label>
-            <h4>Does anyone in your household have allergies?</h4>
-          <input type="checkbox" value="true" v-model="allergies"> Yes
-          <br>
-          <input type="checkbox" value="false" v-model="allergies"> No
+            <input type="checkbox" value="true" v-model="allergies"> Yes
         </label>
-      </div>
+        <br>
+        <label>
+            <input type="checkbox" value="false" v-model="allergies"> No
+        </label>
+    </div>
+    <br>
+
     <div class="form-group">
       <label><h4>About how many hours per day would the dog be left alone?</h4></label>
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="homeDuringDay">
     </div>
     <!-- Is anyone home during the day? <input type="text" v-model="homeDuringDay"> -->
-    <br>
     <div class="form-group">
       <label><h4>When would the dog be outside?</h4></label>
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="whenOutside">
     </div>
     <!-- When would the dog be outside? <input type="text" v-model="whenOutside"> -->
-    <br>
     <div class="form-group">
       <label><h4>When would the dog be inside?</h4></label>
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="whenInside">
     </div>
     <!-- When would the dog be inside? <input type="text" v-model="whenInside"> -->
-    <br>
     <div class="form-group">
       <label><h4>About how many hours per day would the dog be left alone?</h4></label>
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="hoursDogLeftAlone">
     </div>
     <!-- About how many hours per day would the dog be left alone? <input type="text" v-model="hoursDogLeftAlone" > -->
-    <br>
     <div class="form-group">
       <label><h4>Where would the dog sleep at night?</h4></label>
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="whereDogSleep">
@@ -112,8 +105,8 @@
     <input type="radio" v-model="outsideAreas" value="7">  None   
     <br>
     <br>
+
     <h4>What is your preferred level of exercise with a dog?</h4>
-    <br>
     <input type="radio" v-model="preferredLevelOfExercise" value="1">  Couch Potato    
     <br>
     <input type="radio" v-model="preferredLevelOfExercise" value="2">  Short Walks  
@@ -133,13 +126,13 @@
       <input type="text" class="form-control" id="exampleInputEmail1" v-model="typeOfDogFood">
     </div>
     <!-- What type of food will you feed the dog? <input type="text" v-model="typeOfDogFood"> -->
-     <button class="btn btn-default" v-on:click="updateLifestyleInfo(newLifestyleInfo)">Submit</button>
+     <button class="btn btn-lg btn-default" v-on:click="updateLifestyleInfo(newLifestyleInfo)">Submit</button>
     <!-- <input type="submit" value="Submit" v-on:click="updateLifestyleInfo(newLifestyleInfo)" > -->
   </div>
 </div>
 
   <h3 v-on:click="changeScene('ownership history')">Ownership History</h3>
-  <div class="container">
+  
       <div class="ownership-history" v-if="scene === 'ownership history'">
         <div class="form-group">
           <label><h4>How many pets do you currently have?</h4></label>
@@ -156,10 +149,10 @@
           </label>
         </div>
         <!-- Have you ever allowed your pets to breed? <input type="checkbox" v-model="allowedBreeding"> -->
-        <button class="btn btn-default" v-on:click="updateOwnershipHistory(newOwnershipHistory)">Submit</button>
+        <button class="btn btn-lg btn-default" v-on:click="updateOwnershipHistory(newOwnershipHistory)">Submit</button>
         <!-- <input type="submit" value="Submit" v-on:click="updateOwnershipHistory(newOwnershipHistory)"> -->
       </div>
-  </div>
+  
   <h3 v-on:click="changeScene('pets')">Add a Pet</h3>
   <div class="container" v-if="scene === 'pets'">
       <div class="owned-pet" >
@@ -301,8 +294,9 @@
     <br>
     <button class="btn btn-default" v-on:click="updateDwellingInfo(newDwellingInfo)">Submit</button>
    <!--  <input type="submit" value="Submit" v-on:click="updateDwellingInfo(newDwellingInfo)"> -->
-   
+
   </div>
+</div>
 </div>
 
 
