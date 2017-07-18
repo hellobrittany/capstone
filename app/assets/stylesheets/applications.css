@@ -39,19 +39,7 @@ ul {
   width: 600px;
 }
 
-.step {
-  border-radius: 50%;
-  background-color: #0e36cf;
-  height: 30px;
-  position: relative;
-  width: 30px;
-  list-style-type: none;
-  z-index: 1;
-  transition: background-color 0.2s linear;
-}
-.step:hover {
-    cursor:pointer;
-}
+
 
 .hidden {
   display: none;
@@ -106,7 +94,7 @@ ul {
   height: 8px;
   width: 10%;
   top: -8px;
-  transition: width: 0.2s ease-out;
+  transition: width 1s ease-out;
 }
 
 .tracker-bar.lifestyle-info{
@@ -141,6 +129,20 @@ ul {
   color: white;
   line-height: 28px;
   font-weight: bold;
+}
+
+.step {
+  border-radius: 50%;
+  background-color: #0e36cf;
+  height: 30px;
+  position: relative;
+  width: 30px;
+  list-style-type: none;
+  z-index: 1;
+  transition: background-color 0.8s linear;
+}
+.step:hover {
+    cursor:pointer;
 }
 
 .instagram-wrapper {
