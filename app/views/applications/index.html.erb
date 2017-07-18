@@ -2,7 +2,9 @@
 
 <% @applications.each do |application| %>
 	<div>
-		<h2>Dog Name: <%= application.dog.name %></h2> 
-		<h3>Identifier: <%= application.dog.identifier %></h3> 
+    <% if application.dog %>
+  		<a href="/applications/<%=application.id%>"><h2>Dog Name: <%= application.dog.name %></h2>  </a>
+  		<h3>Identifier: <%= application.dog.identifier %></h3> 
+    <% end %>
 	</div>
 <% end %>

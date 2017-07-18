@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       newOwnershipHistory: {},
       newOwnershipProfile: {},
       newDwellingInfo: {},
-      scene: "",
+      scene: "lifestyle",
 
 
       // prgress bar
@@ -88,17 +88,39 @@ document.addEventListener("DOMContentLoaded", function(event) {
       pbDwellingInfo: false,
       pbOwnershipProfile: false,
       pbOwnershipHistory: false,
-      pbPets: false
+      pbPets: false, 
+      tracker: "" 
+
       },
     
 
     methods: { 
+      updateProgressBar: function() {
+        this.scene = 'lifestyle';
+        if (this.pbLifestyleInfo) {
+          this.tracker = 'lifestyle-info';
+          this.scene = 'ownership history';
+          if (this.pbOwnershipHistory) {
+            this.tracker = 'ownership-history';
+            this.scene = 'pets';
+            if (this.pbPets) {
+              this.tracker = 'owned-pets';
+              this.scene = 'ownership profile';
+              if (this.pbOwnershipProfile) {
+                this.tracker = 'ownership-profile';
+                this.scene = 'dwelling';
+                if (this.pbDwellingInfo) {
+                  this.tracker = 'dwelling-info';
+                }
+              }
+            }
+          }
+        }
+      },
       log: function() {
         console.log("working");
       },
-      // addClassLifestyle: function(element) {
-      //   element.addClass("lifestyle");
-      // },
+      
       changeScene: function (currentScene) {
         this.scene = currentScene;
         this.log();
@@ -131,6 +153,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }.bind(this));
 
         tempThis.pbPets = true;
+        tempThis.updateProgressBar();
+
       },
 
       updateLifestyleInfo: function(newLifestyleInfo) {
@@ -164,6 +188,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             success: function(data) {
                                     console.log(data);
                                     tempThis.pbLifestyleInfo = true;
+                                    tempThis.updateProgressBar();
+
                                     },
             error: function(e) {
                                 console.log(e.message);
@@ -194,6 +220,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           success: function(data) {
                                   console.log(data);
                                   tempThis.pbOwnershipHistory = true;
+                                  tempThis.updateProgressBar();
+
                                   },
           error: function(e) {
                               console.log(e.message);
@@ -249,6 +277,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           success: function(data) {
                                   console.log(data);
                                   tempThis.pbOwnershipProfile = true;
+                                  tempThis.updateProgressBar();
+
 
                                   },
           error: function(e) {
@@ -280,6 +310,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
           success: function(data) {
                                   console.log(data);
                                   tempThis.pbDwellingInfo = true;
+                                  tempThis.updateProgressBar();
+                                  
+
                                   },
           error: function(e) {
                               console.log(e.message);
